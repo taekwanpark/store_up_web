@@ -13,7 +13,9 @@
       <!--			profile + cart + heart-->
       <ProfileBox />
     </div>
-    <nav>카테고리 베스트 신상품</nav>
+    <div class="mt-[59px]">
+      <NavBar />
+    </div>
   </header>
 </template>
 
@@ -21,4 +23,5 @@
 import ControlBox from "@/components/header/ControlBox";
 import SearchBox from "@/components/header/SearchBox";
 import ProfileBox from "@/components/header/ProfileBox";
+import NavBar from "@/components/header/NavBar";
 </script>
