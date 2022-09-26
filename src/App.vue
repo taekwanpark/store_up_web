@@ -7,6 +7,4 @@ import Layout from '@/components/Layout';</script>
 	</Layout>
 </template>
 
-<style scoped>
 
-</style>
