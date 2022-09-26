@@ -1,8 +1,10 @@
 <script setup>
-</script>
+import Layout from '@/components/Layout';</script>
 
 <template>
-	<RouterView />
+	<Layout>
+		<RouterView/>
+	</Layout>
 </template>
 
 <style scoped>

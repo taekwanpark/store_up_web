@@ -1,10 +1,6 @@
 <template>
-	<div>
-		<div>Main</div>
-	</div>
+	<div>Login</div>
 </template>
 
 <script setup>
-
 </script>
-
