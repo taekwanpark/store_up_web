@@ -1,3 +1,7 @@
-<template>이용약관동의</template>
+<template>
+  <div class="w-full">
+    <div>abc</div>
+  </div>
+</template>
 
 <script setup></script>
