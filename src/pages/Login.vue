@@ -3,9 +3,7 @@
     class="m-auto flex min-h-full flex-col items-center justify-center py-10"
   >
     <div>
-      <span class="text-[24px] font-bold leading-[35px] tracking-[-0.6px]"
-        >로그인</span
-      >
+      <span class="text-[24px] font-bold leading-[35px]">로그인</span>
     </div>
 
     <div class="mt-[31px] w-full max-w-[360px]">
@@ -13,16 +11,16 @@
         <form action="#" class="" method="POST">
           <div class="">
             <SubmitInput
+              for="userId"
               placeholder="아이디를 입력해주세요"
-              text="userId"
               type="text"
             />
           </div>
 
           <div class="mt-[10px]">
             <SubmitInput
+              for="password"
               placeholder="비밀번호를 입력해주세요"
-              text="password"
               type="password"
             />
           </div>
@@ -58,8 +56,8 @@
           </div>
 
           <div class="mt-[48px] space-y-[8px]">
-            <SubmitBtn btn-text="로그인" is-black />
-            <SubmitBtn btn-text="회원가입" />
+            <SubmitBtn is-black is-submit shape="rd">로그인</SubmitBtn>
+            <SubmitBtn route-to="signup" shape="rd">회원가입</SubmitBtn>
           </div>
         </form>
       </div>

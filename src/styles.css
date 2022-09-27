@@ -11,4 +11,6 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     @apply tracking-[-0.4px];
     box-sizing: border-box;
+    letter-spacing: -0.5px;
+    line-height: 24px;
 }

@@ -3,10 +3,7 @@
     <span v-if="menu"
       ><Bars3Icon class="mr-[8px] inline h-[31px] w-[31px]"
     /></span>
-    <router-link
-      :to="routeTo"
-      class="text-[20px] font-medium leading-[29px] tracking-[-0.5px]"
-    >
+    <router-link :to="routeTo" class="text-[20px] font-medium">
       {{ props.text }}
     </router-link>
   </div>
