@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row-reverse gap-x-[16px]">
+  <div class="mt-[10px] flex w-full flex-row-reverse gap-x-[16px]">
     <div
       class="h-[24px] w-[58px] text-left text-[16px] leading-[24px] tracking-[-0.4px]"
     >

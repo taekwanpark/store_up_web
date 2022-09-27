@@ -9,4 +9,6 @@ html {
 body {
     @apply h-full;
     font-family: 'Noto Sans KR', sans-serif;
+    @apply tracking-[-0.4px];
+    box-sizing: border-box;
 }
