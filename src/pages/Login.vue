@@ -57,7 +57,7 @@
 
           <div class="mt-[48px] space-y-[8px]">
             <SubmitBtn is-black is-submit shape="rd">로그인</SubmitBtn>
-            <SubmitBtn route-to="signup" shape="rd">회원가입</SubmitBtn>
+            <SubmitBtn route-to="/signup" shape="rd">회원가입</SubmitBtn>
           </div>
         </form>
       </div>

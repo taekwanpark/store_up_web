@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Main from "@/pages/Main";
 import Login from "@/pages/Login";
 import SignUp from "@/pages/signup/SignUp";
+import IdInquiry from "@/pages/inquiry/IdInquiry";
 
 const routes = [
   {
@@ -20,6 +21,18 @@ const routes = [
     name: "signup",
     component: SignUp,
     meta: { title: "회원가입" },
+  },
+  {
+    path: "/inquiry/id",
+    name: "idInquiry",
+    component: IdInquiry,
+    meta: { title: "아이디 찾기" },
+  },
+  {
+    path: "/inquiry/password",
+    name: "passwordInquiry",
+    component: IdInquiry,
+    meta: { title: "비밀번호 찾기" },
   },
 ];
 const router = createRouter({

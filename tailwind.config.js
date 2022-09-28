@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,vue}"],
   theme: {
@@ -15,5 +16,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@formkit/themes/tailwindcss"),
+    require("@formkit/tailwindcss"),
+  ],
 };

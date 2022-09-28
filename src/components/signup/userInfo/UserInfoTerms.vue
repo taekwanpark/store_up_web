@@ -1,8 +1,7 @@
 <template>
   <div class="w-full space-y-[16px]">
     <div class="flex items-start gap-x-[6px]">
-      <CheckCircleIcon class="text h-6 w-6 text-amuzGray-E9E9E" />
-      <FormulateInput type="radio"></FormulateInput>
+      <CheckCircleIcon class="h-6 w-6 text-amuzGray-E9E9E" />
       <p>
         <label class="text-[18px] font-medium">전체 동의합니다.</label>
         <br />

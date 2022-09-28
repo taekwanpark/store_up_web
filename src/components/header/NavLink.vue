@@ -1,9 +1,7 @@
 <template>
-  <div class="flex">
-    <span v-if="menu"
-      ><Bars3Icon class="mr-[8px] inline h-[31px] w-[31px]"
-    /></span>
-    <router-link :to="routeTo" class="text-[20px] font-medium">
+  <div class="flex items-center">
+    <Bars3Icon v-if="menu" class="mr-[8px] inline h-[31px] w-[31px]" />
+    <router-link :to="props.routeTo" class="text-[20px] font-medium">
       {{ props.text }}
     </router-link>
   </div>

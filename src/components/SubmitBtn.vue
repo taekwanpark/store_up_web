@@ -5,9 +5,9 @@
       btnSize,
       btnShape,
     ]"
-    class="flex w-full items-center justify-center border border-amuzGray-707070"
+    class="flex h-full w-full items-center justify-center border border-amuzGray-707070"
     type="submit"
-    v-on="isSubmit ? {} : { click: onClick }"
+    v-on="isSubmit ? {} : { click: goToRoute }"
   >
     <slot />
   </button>
@@ -26,7 +26,9 @@ const props = defineProps({
   routeTo: String,
 });
 const btnSize = computed(() => {
-  if (props.size === "sm") {
+  if (props.size === "box") {
+    return "w-full";
+  } else if (props.size === "sm") {
     return "w-[125px] py-[12px] text-[16px]";
   } else if (props.size === "md") {
     return "w-[175px] py-[12px] text-[16px]";
@@ -41,9 +43,9 @@ const btnShape = computed(() => {
     return "";
   }
 });
-const onClick = () => {
+const goToRoute = () => {
   if (props.routeTo) {
-    router.push(`/${props.routeTo}`);
+    router.push(`${props.routeTo}`);
   } else {
     return;
   }
