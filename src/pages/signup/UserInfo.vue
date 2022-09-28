@@ -25,10 +25,10 @@
     <UserInfoFormLayout />
     <Divider />
     <!--		terms-->
-    <div class="flex w-full justify-center">
-      <div class="grid w-full max-w-[630px] grid-cols-5">
-        <div class="">이용약관동의</div>
-        <div class="col-span-4">
+    <div class="mt-[60px] flex w-full justify-center">
+      <div class="flex w-[630px]">
+        <div class="whitespace-nowrap pr-[50px]">이용약관동의</div>
+        <div class="">
           <UserInfoTerms />
           <SubmitBtn class="mt-[82px]" is-black is-submit shape="rd"
             >가입하기

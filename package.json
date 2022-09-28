@@ -7,6 +7,7 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "@formkit/vue": "^1.0.0-beta.10",
     "@headlessui/vue": "^1.7.2",
     "@heroicons/vue": "^2.0.11",
     "@vue-hero-icons/outline": "^1.7.2",
