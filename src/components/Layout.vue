@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto flex min-h-full max-w-[1920px] flex-col">
+  <div class="m-auto flex h-full max-w-[1920px] flex-col">
     <!--		banner-->
     <div
       class="flex h-[57px] w-full flex-none items-center justify-center bg-amuzGray-f5f5f5"
@@ -10,7 +10,9 @@
     <!--		inner container-->
     <Header />
 
-    <main class="mt-[63px] mb-[135px] flex h-full justify-center">
+    <main
+      class="mt-[63px] mb-[135px] flex h-full justify-center border border-blue-500"
+    >
       <InnerLayout>
         <RouterView />
       </InnerLayout>

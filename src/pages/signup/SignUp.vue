@@ -1,12 +1,14 @@
 <template>
-  <SignupHeader />
-  <Terms
-    v-if="currentTab === 'terms'"
-    :btn-click="goToUserInfo"
-    :current-tab="currentTab"
-  />
-  <UserInfo v-if="currentTab === 'userInfo'" />
-  <Approval v-if="currentTab === 'approval'" />
+  <div class="h-full">
+    <SignupHeader />
+    <Terms
+      v-if="currentTab === 'terms'"
+      :btn-click="goToUserInfo"
+      :current-tab="currentTab"
+    />
+    <UserInfo v-if="currentTab === 'userInfo'" />
+    <Approval v-if="currentTab === 'approval'" />
+  </div>
 </template>
 
 <script setup>

@@ -5,7 +5,7 @@ import { createPinia } from "pinia";
 import { defaultConfig, plugin } from "@formkit/vue";
 import "./styles.css";
 import { generateClasses } from "@formkit/themes";
-import formkitTailwndcss from "./libs/formkitTailwndcss";
+import formkitTheme from "@/libs/formkitTheme";
 
 const app = createApp(App);
 const pinia = createPinia();
@@ -17,7 +17,7 @@ app
     plugin,
     defaultConfig({
       config: {
-        classes: generateClasses(formkitTailwndcss),
+        classes: generateClasses(formkitTheme),
       },
     })
   );

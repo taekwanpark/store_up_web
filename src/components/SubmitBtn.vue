@@ -5,7 +5,7 @@
       btnSize,
       btnShape,
     ]"
-    class="flex h-full w-full items-center justify-center border border-amuzGray-707070"
+    class="flex items-center justify-center border border-amuzGray-707070"
     type="submit"
     v-on="isSubmit ? {} : { click: goToRoute }"
   >
@@ -26,8 +26,8 @@ const props = defineProps({
   routeTo: String,
 });
 const btnSize = computed(() => {
-  if (props.size === "box") {
-    return "w-full";
+  if (props.size === "full") {
+    return "w-full h-full";
   } else if (props.size === "sm") {
     return "w-[125px] py-[12px] text-[16px]";
   } else if (props.size === "md") {

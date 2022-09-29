@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-[60px] flex w-full flex-col items-center">
+  <div class="mt-[60px] flex w-full flex-col items-center border">
     <CheckCircleIcon class="h-[130px] w-[130px]" />
     <div class="mt-[22px]">
       <div class="text-[20px] text-amuzGray-707070">
