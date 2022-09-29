@@ -1,42 +1,35 @@
 <template>
-  <div
-    :class="props.margin"
-    class="grid grid-cols-5 items-center gap-x-[5px] justify-self-start last:mb-0"
-  >
-    <label :for="props.label" class="block text-[16px] font-medium">{{
-      props.text
-    }}</label>
-    <div :class="[isWide ? 'col-span-4' : 'col-span-3']" class="border">
-      <input
-        :id="props.label"
-        :name="props.label"
-        :pattern="props.pattern"
-        :placeholder="props.placeholder"
-        :type="props.type"
-        class="block w-full rounded-[5px] border border-amuzGray-707070 py-[12px] pl-[14px] placeholder-amuzGray-d2d2d2"
-      />
+  <div :class="props.mb ? 'mb-4' : ''" class="grid w-full grid-cols-5 gap-x-2">
+    <div class="col-span-4">
+      <FormKit
+        :classes="{
+          outer: 'w-full',
+          label:
+            'block mb-1 text-base font-medium formkit-invalid:text-red-500 text-left',
+          wrapper:
+            'grid w-full grid-cols-4 items-center gap-x-2 justify-self-start',
+          inner:
+            'col-span-3 max-w-md  formkit-invalid:border-red-500 mb-1 overflow-hiddenfocus-within:border-blue-500  ',
+          input:
+            'w-full h-[50px] px-3 border border-gray-400 rounded-lg text-base text-gray-700 placeholder-gray-400',
+        }"
+        :label="props.inputLabel"
+        :placeholder="props.inputPh"
+        type="text"
+      ></FormKit>
     </div>
-    <SubmitBtn v-if="props.hasBtn" shape="rd" size="sm"
-      >{{ props.btnText }}
-    </SubmitBtn>
+    <TwBtn v-if="btnText" btn-size="xs">{{ props.btnText }}</TwBtn>
   </div>
 </template>
 
 <script setup>
-import { defineProps } from "vue";
-import SubmitBtn from "@/components/SubmitBtn";
+import TwBtn from "@/components/TwBtn";
 
 const props = defineProps({
-  text: { type: String },
-  placeholder: { type: String },
-  label: { type: String, required: true },
-  type: { type: String, required: true },
-  isRequired: Boolean,
-  hasBtn: Boolean,
-  btnText: String,
-  isWide: Boolean,
-  margin: { type: String, default: "mb-[22px]" },
-  pattern: String,
+  btnText: { type: String },
+  inputLabel: { type: String },
+  inputPh: { type: String },
+  mb: { type: Boolean },
 });
 </script>
 

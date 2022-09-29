@@ -1,13 +1,13 @@
 <template>
-  <div class="mt-[34px] flex flex-col justify-center">
+  <div class="flex flex-col items-center justify-center">
     <!--		이용약관-->
-    <div class="flex flex-col gap-y-[73px]">
+    <div class="mt-16 mb-20 flex flex-col gap-y-20">
       <Term is-required title="이용약관" />
       <Term is-required title="개인정보 수집 및 이용동의" />
       <Term title="개인정보 제 3자 제공 동의" />
     </div>
     <Divider />
-    <div class="mt-[40px] flex w-full flex-col items-center justify-center">
+    <div class="mt-8 flex w-full flex-col items-center justify-center">
       <FormKit
         :classes="{
           label: '$reset text-black font-medium',
@@ -15,25 +15,21 @@
         label="위 모든 항목에 모두 동의합니다."
         type="checkbox"
       />
-      <div class="mt-[29px] flex w-full justify-center space-x-[9px]">
-        <SubmitBtn class="" shape="sq" size="sm">취소</SubmitBtn>
-        <SubmitBtn
-          class=""
-          is-black
-          shape="sq"
-          size="sm"
-          @click="props.btnClick"
+
+      <div class="mt-8 flex w-full justify-center gap-x-2">
+        <TwBtn btn-size="sm" route-to="/">취소</TwBtn>
+        <TwBtn btn-size="sm" is-black="black" @click="props.btnClick"
           >다음 단계
-        </SubmitBtn>
+        </TwBtn>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import SubmitBtn from "@/components/SubmitBtn";
 import Divider from "@/components/Divider";
 import Term from "@/components/signup/terms/Term";
+import TwBtn from "@/components/TwBtn";
 
 const props = defineProps({
   currentTab: String,

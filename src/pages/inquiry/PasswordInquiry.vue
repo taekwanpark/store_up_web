@@ -2,7 +2,7 @@
   <div class="flex w-full justify-center">
     <InnerXsLayout>
       <div class="flex h-full w-full flex-col items-center justify-center">
-        <div class="mb-11 text-2xl font-bold">아이디 찾기</div>
+        <div class="mb-11 text-2xl font-bold">비밀번호 찾기</div>
         <IdFind
           v-if="currentTab === 'find'"
           :show-certification="showCertification"

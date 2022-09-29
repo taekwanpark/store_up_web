@@ -1,25 +1,33 @@
 <template>
   <FormKit
-    :classes="{
-      input: [btnSize, roundSize],
+    :input-class="{
+      'h-[50px] w-[4.7rem] text-sm': 'btnSize2Xs' === btnSize,
+      'h-[50px] w-32 text-sm': 'btnSizeXs' === btnSize,
+      'h-[50px] w-[9.75rem] text-base': 'btnSizeSm' === btnSize,
+      'h-[60px] w-44 text-base': 'btnSizeMd' === btnSize,
+      'h-[60px] w-60 text-base': 'btnSizeLg' === btnSize,
+      'h-[60px] w-96 text-base': 'btnSizeXl' === btnSize,
+      'rounded-md': 'roundSizeSm' === roundSize,
+      'rounded-full': 'roundSizeLg' === roundSize,
+      'bg-black text-white hover:bg-white hover:text-black':
+        props.isBlack === 'black',
+      'bg-white text-black hover:bg-gray-50': props.isBlack === 'white',
     }"
-    class="inline-flex items-center border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
     type="button"
+    v-on="isSubmit ? {} : { click: goToRoute }"
   >
-    Button text
+    <slot />
   </FormKit>
 </template>
 
 <script setup>
 import { computed } from "vue";
+import { useRouter } from "vue-router";
 
-const btnSizeSm = "px-2.5 py-1.5 text-xs";
-const btnSizeMd = "px-4 py-2 text-sm";
-const btnSizeLg = "px-6 py-3 text-base";
-const roundSizeSm = "rounded-md";
-const roundSizeLg = "rounded-full";
+const router = useRouter();
+
 const props = defineProps({
-  isBlack: Boolean,
+  isBlack: { type: String, default: "white" },
   isSubmit: Boolean,
   roundSize: String,
   btnSize: String,
@@ -27,20 +35,32 @@ const props = defineProps({
 });
 
 const btnSize = computed(() => {
-  if (props.btnSize === "lg") {
-    return btnSizeLg;
+  if (props.btnSize === "xl") {
+    return "btnSizeXl";
+  } else if (props.btnSize === "lg") {
+    return "btnSizeLg";
+  } else if (props.btnSize === "md") {
+    return "btnSizeMd";
   } else if (props.btnSize === "sm") {
-    return btnSizeSm;
+    return "btnSizeSm";
+  } else if (props.btnSize === "xxs") {
+    return "btnSize2Xs";
   } else {
-    return btnSizeMd;
+    return "btnSizeXs";
   }
 });
 
 const roundSize = computed(() => {
   if (props.roundSize === "lg") {
-    return roundSizeLg;
+    return "roundSizeLg";
   } else {
-    return roundSizeSm;
+    return "roundSizeSm";
   }
 });
+
+const goToRoute = () => {
+  if (props.routeTo) {
+    router.push(`${props.routeTo}`);
+  }
+};
 </script>

@@ -1,26 +1,21 @@
 <template>
-  <div class="flex h-[413px] w-full flex-col items-center">
+  <div class="= flex h-96 w-full flex-col items-center">
     <Divider />
-    <InnerLayout>
+    <InnerLgLayout>
       <PolicyRow />
-    </InnerLayout>
+    </InnerLgLayout>
     <Divider />
     <div class="flex h-full w-full justify-center bg-amuzGray-f5f5f5">
-      <InnerLayout>
+      <InnerLgLayout>
         <CompanyRow />
-      </InnerLayout>
+      </InnerLgLayout>
     </div>
   </div>
 </template>
 
-<script setup></script>
-<script>
-import InnerLayout from "@/components/InnerLayout";
+<script setup>
 import PolicyRow from "@/components/footer/PolicyRow";
 import Divider from "@/components/Divider";
 import CompanyRow from "@/components/footer/CompanyRow";
-
-export default {
-  components: { CompanyRow, Divider, PolicyRow, InnerLayout },
-};
+import InnerLgLayout from "@/components/InnerLgLayout";
 </script>

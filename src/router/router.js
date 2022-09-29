@@ -3,6 +3,7 @@ import Main from "@/pages/Main";
 import Login from "@/pages/Login";
 import SignUp from "@/pages/signup/SignUp";
 import IdInquiry from "@/pages/inquiry/IdInquiry";
+import PasswordInquiry from "@/pages/inquiry/PasswordInquiry";
 
 const routes = [
   {
@@ -31,7 +32,7 @@ const routes = [
   {
     path: "/inquiry/password",
     name: "passwordInquiry",
-    component: IdInquiry,
+    component: PasswordInquiry,
     meta: { title: "비밀번호 찾기" },
   },
 ];

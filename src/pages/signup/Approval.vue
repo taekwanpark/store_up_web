@@ -1,21 +1,21 @@
 <template>
-  <div class="mt-[60px] flex w-full flex-col items-center border">
-    <CheckCircleIcon class="h-[130px] w-[130px]" />
-    <div class="mt-[22px]">
-      <div class="text-[20px] text-amuzGray-707070">
+  <div class="mt-14 flex w-full flex-col items-center">
+    <CheckCircleIcon class="h-36 w-36" />
+    <div class="mt-6">
+      <div class="text-xl text-amuzGray-707070">
         홍길동님의 회원가입 완료되었습니다.
       </div>
     </div>
-    <div class="mt-[55px] flex w-full justify-center space-x-[15px]">
-      <SubmitBtn route-to="/" shape="rd" size="md">홈 바로가기</SubmitBtn>
-      <SubmitBtn is-black route-to="/login" shape="rd" size="md"
+    <div class="mt-20 flex w-full justify-center space-x-[15px]">
+      <TwBtn btn-size="md" route-to="/">홈 바로가기</TwBtn>
+      <TwBtn btn-size="md" is-black="black" route-to="/login"
         >로그인 하기
-      </SubmitBtn>
+      </TwBtn>
     </div>
   </div>
 </template>
 
 <script setup>
 import { CheckCircleIcon } from "@heroicons/vue/24/solid";
-import SubmitBtn from "@/components/SubmitBtn";
+import TwBtn from "@/components/TwBtn";
 </script>

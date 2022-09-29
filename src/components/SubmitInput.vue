@@ -6,7 +6,7 @@
       :name="props.for"
       :placeholder="props.placeholder"
       :type="props.type"
-      class="block h-[57px] w-full appearance-none rounded-[5px] border border-amuzGray-707070 px-[21px] text-[16px] leading-[24px] placeholder-amuzGray-d2d2d2 placeholder:text-[16px]"
+      class="block h-[50px] w-full appearance-none rounded-md border border-amuzGray-707070 px-5 text-base placeholder-amuzGray-d2d2d2 placeholder:text-[16px]"
       required=""
     />
   </div>

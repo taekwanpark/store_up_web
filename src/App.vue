@@ -1,10 +1,9 @@
 <script setup>
-import Layout from '@/components/Layout';</script>
+import Layout from "@/components/Layout";
+</script>
 
 <template>
-	<Layout>
-		<RouterView/>
-	</Layout>
+  <Layout>
+    <RouterView />
+  </Layout>
 </template>
-
-
