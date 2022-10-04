@@ -9,10 +9,8 @@
 
     <Header />
 
-    <main class="my-32 mb-auto min-h-fit w-full">
-      <div class="flex w-full items-center justify-center">
-        <slot></slot>
-      </div>
+    <main class="mb-auto min-h-fit w-full py-32">
+      <slot></slot>
     </main>
     <Footer />
   </div>

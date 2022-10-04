@@ -1,40 +1,42 @@
 <template>
-  <div class="flex w-full justify-center">
-    <InnerXsLayout>
-      <div class="flex h-full w-full flex-col items-center justify-center">
-        <div class="mb-11 text-2xl font-bold">비밀번호 찾기</div>
-        <IdFind
-          v-if="currentTab === 'find'"
-          :show-certification="showCertification"
-          @certificate="certificate"
-          @findId="findId"
-        />
-        <IdFound v-if="currentTab === 'found'" />
-      </div>
-    </InnerXsLayout>
-  </div>
-  <Modal
-    :is-open="isOpen"
-    text="인증번호가 발송되었습니다."
-    @closeModal="closeModal"
-  />
+  <InnerXsLayout>
+    <div class="flex h-full w-full flex-col items-center justify-center">
+      <div class="mb-11 text-2xl font-bold">비밀번호 찾기</div>
+      <PasswordFind
+        v-if="currentTab === 'find'"
+        :show-certification="showCertification"
+        @certificate="certificate"
+        @findPw="findPw"
+      />
+      <ResetPassword v-if="currentTab === 'found'" @change-pw="changePw" />
+    </div>
+  </InnerXsLayout>
+  <Modal :is-open="isOpen" :text="modalText" @closeModal="closeModal" />
 </template>
 
 <script setup>
 import { ref } from "vue";
-import IdFind from "@/pages/inquiry/IdFind";
 import Modal from "@/components/Modal";
-import IdFound from "@/pages/inquiry/IdFound";
-import InnerXsLayout from "@/components/InnerXsLayout";
+import InnerXsLayout from "@/components/layouts/InnerXsLayout";
+import PasswordFind from "@/components/inquiry/password/PasswordFind";
+import ResetPassword from "@/components/inquiry/password/resetPassword";
 
 const isOpen = ref(false);
 const currentTab = ref("find");
 const showCertification = ref(false);
+const modalText = ref("");
 
-const certificate = () => {
+const changePw = () => {
+  modalText.value = "비밀번호 변경이 완료되었습니다.";
   isOpen.value = true;
 };
-const findId = () => {
+
+const certificate = () => {
+  modalText.value = "인증번호가 발송되었습니다.";
+  isOpen.value = true;
+};
+
+const findPw = () => {
   currentTab.value = "found";
 };
 const closeModal = () => {

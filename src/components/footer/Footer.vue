@@ -17,5 +17,5 @@
 import PolicyRow from "@/components/footer/PolicyRow";
 import Divider from "@/components/Divider";
 import CompanyRow from "@/components/footer/CompanyRow";
-import InnerLgLayout from "@/components/InnerLgLayout";
+import InnerLgLayout from "@/components/layouts/InnerLgLayout";
 </script>

@@ -1,9 +1,7 @@
 <template>
-  <div class="h-full w-full max-w-5xl">
+  <div class="flex w-full justify-center">
     <slot />
   </div>
 </template>
 
 <script setup></script>
-
-<style scoped></style>

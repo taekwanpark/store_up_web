@@ -1,18 +1,16 @@
 <template>
-  <div class="flex w-full justify-center">
-    <InnerXsLayout>
-      <div class="flex h-full w-full flex-col items-center justify-center">
-        <div class="mb-11 text-2xl font-bold">아이디 찾기</div>
-        <IdFind
-          v-if="currentTab === 'find'"
-          :show-certification="showCertification"
-          @certificate="certificate"
-          @findId="findId"
-        />
-        <IdFound v-if="currentTab === 'found'" />
-      </div>
-    </InnerXsLayout>
-  </div>
+  <InnerXsLayout>
+    <div class="flex h-full w-full flex-col items-center justify-center">
+      <div class="mb-11 text-2xl font-bold">아이디 찾기</div>
+      <IdFind
+        v-if="currentTab === 'find'"
+        :show-certification="showCertification"
+        @certificate="certificate"
+        @findId="findId"
+      />
+      <IdFound v-if="currentTab === 'found'" />
+    </div>
+  </InnerXsLayout>
   <Modal
     :is-open="isOpen"
     text="인증번호가 발송되었습니다."
@@ -22,10 +20,10 @@
 
 <script setup>
 import { ref } from "vue";
-import IdFind from "@/pages/inquiry/IdFind";
+import IdFind from "@/components/inquiry/id/IdFind";
 import Modal from "@/components/Modal";
-import IdFound from "@/pages/inquiry/IdFound";
-import InnerXsLayout from "@/components/InnerXsLayout";
+import IdFound from "@/components/inquiry/id/IdFound";
+import InnerXsLayout from "@/components/layouts/InnerXsLayout";
 
 const isOpen = ref(false);
 const currentTab = ref("find");

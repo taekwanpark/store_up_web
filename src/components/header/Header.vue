@@ -21,7 +21,7 @@
 <script setup>
 import LoginRow from "@/components/header/LoginRow";
 import NavBar from "@/components/header/NavBar";
-import InnerLayout from "@/components/InnerLgLayout";
+import InnerLayout from "@/components/layouts/InnerLgLayout";
 import MainRow from "@/components/header/MainRow";
 import Divider from "@/components/Divider";
 </script>

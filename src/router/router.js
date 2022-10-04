@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Main from "@/pages/Main";
 import Login from "@/pages/Login";
-import SignUp from "@/pages/signup/SignUp";
+import SignUp from "@/pages/SignUp";
 import IdInquiry from "@/pages/inquiry/IdInquiry";
 import PasswordInquiry from "@/pages/inquiry/PasswordInquiry";
 

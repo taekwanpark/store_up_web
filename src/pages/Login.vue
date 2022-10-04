@@ -9,15 +9,18 @@
         <div class="w-full">
           <form action="#" class="w-full" method="POST">
             <div class="flex w-full flex-col gap-y-2">
-              <TwInput
-                label="아이디"
+              <FormKit
+                label="userId"
                 label-class="hidden"
                 placeholder="아이디를 입력해주세요"
+                type="text"
               />
-              <TwInput
-                label="비밀번호"
+              <FormKit
+                label="Password"
                 label-class="hidden"
+                name="password"
                 placeholder="비밀번호를 입력해주세요"
+                type="password"
               />
             </div>
             <div class="mt-2 flex items-center justify-between">
@@ -45,8 +48,8 @@
             </div>
 
             <div class="mt-12 flex items-center gap-x-2">
-              <TwBtn btn-size="sm" is-black="black" is-submit>로그인</TwBtn>
-              <TwBtn btn-size="sm" route-to="/signup">회원가입</TwBtn>
+              <StoreBtn btn-size="custom" is-black>로그인</StoreBtn>
+              <StoreBtn btn-size="custom" route-to="/signup">회원가입</StoreBtn>
             </div>
           </form>
         </div>
@@ -56,8 +59,7 @@
 </template>
 
 <script setup>
-import TwBtn from "@/components/TwBtn";
-import InnerXsLayout from "@/components/InnerXsLayout";
-import TwInput from "@/components/TwInput";
+import InnerXsLayout from "@/components/layouts/InnerXsLayout";
+import StoreBtn from "@/components/StoreBtn";
 </script>
 <script></script>

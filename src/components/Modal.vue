@@ -30,27 +30,30 @@
             leave-to="opacity-0 translate-y-4 translate-y-0 scale-95"
           >
             <DialogPanel
-              class="relative w-full max-w-[730px] transform overflow-hidden rounded-[5px] bg-white p-6 px-[33px] pt-[30px] pb-[39px] transition-all"
+              class="relative w-full max-w-xl transform overflow-hidden rounded-lg bg-white px-8 pt-6 pb-8 transition-all"
             >
               <DialogTitle
                 as="h3"
-                class="mb-[12px] text-left text-[24px] font-medium leading-[47px] text-black"
+                class="mb-3 text-left text-xl font-medium leading-loose text-black"
                 >알림 메세지
               </DialogTitle>
               <Divider />
-              <div class="my-[85px] flex w-full justify-center">
-                <p class="text-[24px] leading-[35px] text-amuzGray-707070">
+              <div class="my-16 flex w-full justify-center">
+                <p class="text-2xl text-gray-500">
                   {{ props.text }}
                 </p>
               </div>
               <div class="">
-                <button
-                  class="inline-flex w-full w-auto justify-center rounded-[5px] border border-transparent bg-amuzGray-707070 bg-amuzGray-707070 px-[98px] py-[20px] text-[20px] text-white shadow-sm hover:bg-amuzGray-979797 focus:outline-none focus:ring-2 focus:ring-amuzGray-707070 focus:ring-offset-2"
-                  type="button"
-                  @click="closeModal"
-                >
-                  확인
-                </button>
+                <!--                <button-->
+                <!--                  class="text-normal font inline-flex w-full w-auto justify-center rounded-lg border border-transparent bg-gray-500 bg-gray-500 px-14 py-3 text-white shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"-->
+                <!--                  type="button"-->
+                <!--                  @click="closeModal"-->
+                <!--                >-->
+                <!--                  확인-->
+                <!--                </button>-->
+                <StoreBtn btn-size="sm" is-black @click="closeModal"
+                  >확인
+                </StoreBtn>
               </div>
             </DialogPanel>
           </TransitionChild>
@@ -70,6 +73,7 @@ import {
 } from "@headlessui/vue";
 import { defineEmits, defineProps } from "vue";
 import Divider from "@/components/Divider";
+import StoreBtn from "@/components/StoreBtn";
 
 const props = defineProps({
   isOpen: { type: Boolean, required: true },

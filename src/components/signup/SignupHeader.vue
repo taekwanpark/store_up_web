@@ -1,37 +1,33 @@
 <template>
-  <div class="flex justify-center pb-4">
-    <span class="text-[24px] font-bold">회원가입</span>
+  <div class="mb-16">
+    <div class="mb-4 flex justify-center">
+      <span class="text-2xl font-bold">회원가입</span>
+    </div>
+    <Divider />
+    <div class="my-3 flex items-center justify-center gap-x-1">
+      <div
+        :class="props.currentTab === 'terms' ? '' : 'text-gray-400'"
+        class="inline-flex items-center"
+      >
+        <div class="leading-none">01 약관동의</div>
+        <ChevronRightIcon class="mt-[2px] h-4 w-4" />
+      </div>
+      <div
+        :class="props.currentTab === 'userInfo' ? '' : 'text-gray-400'"
+        class="inline-flex items-center"
+      >
+        <div class="leading-none">02 정보입력</div>
+        <ChevronRightIcon class="mt-[2px] h-4 w-4" />
+      </div>
+      <div
+        :class="props.currentTab === 'approval' ? '' : 'text-gray-400'"
+        class="inline-flex items-center"
+      >
+        <div class="leading-none">03 가입완료</div>
+      </div>
+    </div>
+    <Divider />
   </div>
-  <Divider />
-  <div class="my-3 flex items-center justify-center gap-x-1">
-    <div
-      :class="props.currentTab === 'terms' ? '' : 'text-amuzGray-d2d2d2'"
-      class="inline-flex items-center"
-    >
-      <div>
-        <span>02 정보입력</span>
-      </div>
-      <ChevronRightIcon class="h-4 w-4" />
-    </div>
-    <div
-      :class="props.currentTab === 'userInfo' ? '' : 'text-amuzGray-d2d2d2'"
-      class="inline-flex items-center"
-    >
-      <div>
-        <span>01 약관동의</span>
-      </div>
-      <ChevronRightIcon class="h-4 w-4" />
-    </div>
-    <div
-      :class="props.currentTab === 'approval' ? '' : 'text-amuzGray-d2d2d2'"
-      class="inline-flex items-center"
-    >
-      <div>
-        <span>03 가입완료</span>
-      </div>
-    </div>
-  </div>
-  <Divider />
 </template>
 
 <script setup>
