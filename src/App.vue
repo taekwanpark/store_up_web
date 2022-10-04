@@ -1,5 +1,5 @@
 <script setup>
-import Layout from "@/components/Layout";
+import Layout from "@/components/layouts/Layout";
 </script>
 
 <template>

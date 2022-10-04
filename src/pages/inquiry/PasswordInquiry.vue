@@ -16,11 +16,13 @@
 
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 import Modal from "@/components/Modal";
 import InnerXsLayout from "@/components/layouts/InnerXsLayout";
 import PasswordFind from "@/components/inquiry/password/PasswordFind";
 import ResetPassword from "@/components/inquiry/password/resetPassword";
 
+const router = useRouter();
 const isOpen = ref(false);
 const currentTab = ref("find");
 const showCertification = ref(false);
@@ -42,5 +44,8 @@ const findPw = () => {
 const closeModal = () => {
   isOpen.value = false;
   showCertification.value = true;
+  if (currentTab.value === "found") {
+    router.push("/login");
+  }
 };
 </script>
