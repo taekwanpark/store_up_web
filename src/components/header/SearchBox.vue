@@ -1,10 +1,12 @@
 <template>
   <div>
     <div>
-      <div class="relative flex w-full items-center justify-center">
+      <div
+        class="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-gray-50 shadow-inner"
+      >
         <input
           id="search"
-          class="block w-96 rounded-lg border-none bg-gray-100 px-5 py-4 text-left text-base shadow-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
+          class="block w-96 border-none bg-transparent px-5 py-4 text-left text-base placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
           name="search"
           placeholder="검색어를 입력해주세요."
           type="text"

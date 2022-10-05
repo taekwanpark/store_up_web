@@ -10,7 +10,9 @@
     <Header />
 
     <main
-      :class="route.path === '/' ? '' : 'py-32'"
+      :class="
+        route.path.includes('/products') || route.path === '/' ? '' : 'py-32'
+      "
       class="mb-auto min-h-fit w-full"
     >
       <slot></slot>

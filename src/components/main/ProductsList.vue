@@ -1,8 +1,14 @@
 <template>
   <div class="py-14">
-    <div class="mb-6 flex items-center justify-between">
+    <div
+      :class="isPage ? 'justify-center' : 'justify-between'"
+      class="mb-6 flex items-center"
+    >
       <div class="text-2xl font-semibold">{{ title }}</div>
-      <div class="group flex cursor-pointer items-center justify-end">
+      <div
+        v-if="!isPage"
+        class="group flex cursor-pointer items-center justify-end"
+      >
         <div
           class="h-5 text-lg leading-none text-gray-500 group-hover:text-gray-600"
         >
@@ -13,13 +19,17 @@
         />
       </div>
     </div>
+    <div v-if="isPage" class="mt-10 mb-4 flex w-full justify-between">
+      <div>총 157건</div>
+      <div>최신순 | 낮은가격순 | 높은 가격순</div>
+    </div>
     <ul class="grid grid-cols-4 gap-x-6 gap-y-20" role="list">
       <li
         v-for="product in products.slice(0, parseInt(listAmount))"
         :key="product.email"
         class="col-span-1 flex flex-col overflow-hidden bg-white"
       >
-        <div class="group relative">
+        <div class="group relative overflow-hidden rounded-lg shadow-lg">
           <img
             :alt="product.name"
             :src="product.imageUrl"
@@ -81,9 +91,10 @@ import {
 } from "@heroicons/vue/24/outline";
 
 const props = defineProps({
-  title: { type: String, required: true },
-  routeTo: { type: String, required: true },
+  title: { type: String },
+  routeTo: { type: String },
   listAmount: { type: String, default: "8" },
   products: { type: Array, required: true },
+  isPage: { type: Boolean, default: false },
 });
 </script>

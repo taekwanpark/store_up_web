@@ -30,17 +30,20 @@
               leave-from-class="opacity-100 translate-y-0"
               leave-to-class="opacity-0 translate-y-1"
             >
-              <PopoverPanel
-                class="absolute z-10 -ml-4 mt-3 w-screen max-w-[150px]"
-              >
+              <PopoverPanel class="absolute z-10 -ml-2 mt-5 w-screen max-w-fit">
                 <div
-                  class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
+                  :class="secondaryCategories ? 'w-80' : 'w-40'"
+                  class="flex divide-x-2 overflow-hidden rounded-lg shadow-lg transition-all duration-700 ease-in-out"
+                  @mouseleave="mouseLeave"
                 >
-                  <ul class="relative grid gap-6 gap-8 bg-white p-8 px-5 py-6">
+                  <ul
+                    class="relative z-20 flex w-40 flex-col justify-start gap-1 rounded-l-lg bg-white p-4"
+                  >
                     <li
                       v-for="item in solutions"
                       :key="item.name"
-                      class="-m-4 flex cursor-pointer items-start rounded-lg p-3 text-black hover:bg-gray-50 hover:text-black"
+                      class="flex h-10 w-32 cursor-pointer items-center rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
+                      @mouseenter="mouseEnter"
                     >
                       <component
                         :is="item.icon"
@@ -48,10 +51,52 @@
                         class="h-5 w-5 flex-shrink-0"
                       />
                       <div class="ml-4">
-                        <p class="whitespace-nowrap text-sm font-normal">
+                        <p
+                          class="whitespace-nowrap text-base font-normal leading-none"
+                        >
                           {{ item.name }}
                         </p>
                       </div>
+                    </li>
+                  </ul>
+
+                  <ul
+                    class="relative z-20 grid w-44 gap-1 rounded-r-lg bg-white p-4"
+                  >
+                    <li
+                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
+                    >
+                      백미/현미
+                    </li>
+                    <li
+                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
+                    >
+                      찹쌀/잡곡/곡류
+                    </li>
+                    <li
+                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
+                    >
+                      김치
+                    </li>
+                    <li
+                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
+                    >
+                      과일/견과
+                    </li>
+                    <li
+                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
+                    >
+                      채소/나물
+                    </li>
+                    <li
+                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
+                    >
+                      농산 가공식품
+                    </li>
+                    <li
+                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
+                    >
+                      기타 농산품
                     </li>
                   </ul>
                 </div>
@@ -59,21 +104,13 @@
             </transition>
           </Popover>
 
-          <a class="text-xl font-medium text-black hover:text-gray-600" href="#"
-            >베스트</a
-          >
-          <a class="text-xl font-medium text-black hover:text-gray-600" href="#"
-            >신상품</a
-          >
-          <a class="text-xl font-medium text-black hover:text-gray-600" href="#"
-            >떨이할인</a
-          >
-          <a class="text-xl font-medium text-black hover:text-gray-600" href="#"
-            >정기구독</a
-          >
-          <a class="text-xl font-medium text-black hover:text-gray-600" href="#"
-            >이벤트</a
-          >
+          <RouterLink
+            v-for="page in navPages"
+            :key="page.title"
+            :to="page.to"
+            class="text-xl font-medium text-black hover:text-gray-600"
+            >{{ page.page }}
+          </RouterLink>
         </PopoverGroup>
       </div>
     </div>
@@ -95,6 +132,30 @@ import {
   ShieldCheckIcon,
   Squares2X2Icon,
 } from "@heroicons/vue/24/outline";
+import { ref } from "vue";
+
+const navPages = [
+  {
+    page: "베스트",
+    to: "/products/best",
+  },
+  {
+    page: "신상품",
+    to: "/products/newest",
+  },
+  {
+    page: "떨이할인",
+    to: "/products/discount",
+  },
+  {
+    page: "정기구독",
+    to: "/products/subscription",
+  },
+  {
+    page: "이벤트",
+    to: "/products/subscription",
+  },
+];
 
 const solutions = [
   {
@@ -128,4 +189,14 @@ const solutions = [
     icon: ArrowPathIcon,
   },
 ];
+const secondaryCategories = ref(false);
+
+const mouseEnter = () => {
+  secondaryCategories.value = true;
+  console.log(secondaryCategories.value);
+};
+const mouseLeave = () => {
+  secondaryCategories.value = false;
+};
 </script>
+<style></style>
