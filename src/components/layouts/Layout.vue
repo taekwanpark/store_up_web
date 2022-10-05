@@ -17,6 +17,7 @@
     >
       <slot></slot>
     </main>
+    <StickyProducts />
     <Footer />
   </div>
 </template>
@@ -25,6 +26,7 @@
 import Header from "../header/Header";
 import Footer from "@/components/footer/Footer";
 import { useRoute } from "vue-router";
+import StickyProducts from "@/components/StickyProducts";
 
 const route = useRoute();
 </script>

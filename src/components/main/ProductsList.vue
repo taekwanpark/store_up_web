@@ -20,8 +20,10 @@
       </div>
     </div>
     <div v-if="isPage" class="mt-10 mb-4 flex w-full justify-between">
-      <div>총 157건</div>
-      <div>최신순 | 낮은가격순 | 높은 가격순</div>
+      <div class="text-xs text-gray-500">총 157건</div>
+      <div class="cursor-pointer text-xs text-gray-500">
+        최신순 | 낮은가격순 | 높은 가격순
+      </div>
     </div>
     <ul class="grid grid-cols-4 gap-x-6 gap-y-20" role="list">
       <li
