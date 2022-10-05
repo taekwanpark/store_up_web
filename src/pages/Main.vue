@@ -1,18 +1,13 @@
 <template>
-  <!--		banner slider-->
-  <div>
-    <div class="h-96 w-full border"></div>
+  <div class="mb-32">
+    <!--		banner slider-->
+    <div>
+      <div class="h-96 w-full bg-gray-100"></div>
+    </div>
+    <MainContents />
   </div>
-
-  <InnerLgLayout>
-    <!--		인기 상품-->
-    <MainProductList routeTo="/products-list/best" title="BEST - 인기 상품" />
-    <!--		신상품-->
-    <MainProductList routeTo="/" title="신상품" />
-  </InnerLgLayout>
 </template>
 
 <script setup>
-import InnerLgLayout from "@/components/layouts/InnerLgLayout";
-import MainProductList from "@/components/main/MainProductList";
+import MainContents from "@/components/main/MainContents";
 </script>

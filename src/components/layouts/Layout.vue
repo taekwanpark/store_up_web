@@ -2,7 +2,7 @@
   <div class="m-auto flex h-full w-full max-w-[1920px] flex-col">
     <!--		banner-->
     <div
-      class="flex h-16 w-full flex-none items-center justify-center bg-amuzGray-f5f5f5"
+      class="flex h-16 w-full flex-none items-center justify-center bg-gray-100"
     >
       <div>3만원 이상 무료배송!</div>
     </div>

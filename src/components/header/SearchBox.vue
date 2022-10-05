@@ -1,18 +1,18 @@
 <template>
   <div>
     <div>
-      <div class="relative flex items-center">
+      <div class="relative flex w-full items-center justify-center">
         <input
           id="search"
-          class="block h-[56px] w-[424px] rounded-[5px] border border-black p-[20px] py-[16px] text-left text-[16px] shadow-sm placeholder:text-amuzGray-d2d2d2 focus:border-indigo-500 focus:ring-indigo-500"
+          class="block w-96 rounded-lg border-none bg-gray-100 px-5 py-4 text-left text-base shadow-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
           name="search"
           placeholder="검색어를 입력해주세요."
           type="text"
         />
-        <div class="absolute inset-y-0 right-[15px] flex">
+        <div class="absolute inset-y-0 right-4 flex">
           <div class="inline-flex items-center">
             <svg
-              class="h-[31px] w-[31px]"
+              class="h-8 w-8"
               fill="none"
               stroke="currentColor"
               stroke-width="1.5"
