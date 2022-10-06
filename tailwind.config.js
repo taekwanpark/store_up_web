@@ -7,7 +7,7 @@ module.exports = {
       colors: {
         store: {
           placeHolder: `#9ca3af`,
-          border: `#e5e7eb`,
+          border: `#d1d5db`,
           gray: {
             extraLight: `#f9fafb`,
             light: `#f3f4f6`,

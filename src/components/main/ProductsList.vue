@@ -72,7 +72,7 @@
             </h3>
             <span
               v-if="product.subscription"
-              class="inline-flex items-center rounded-xl bg-gray-200 px-2 py-0.5 text-center text-xs font-semibold font-medium text-indigo-500"
+              class="inline-flex items-center rounded-xl bg-store-gray-normal px-2 pb-0.5 pt-1 text-center text-xs font-normal text-store-blue-dark"
               >정기구독</span
             >
           </div>

@@ -7,7 +7,7 @@
           <div class="col-span-4">
             <FormKit label="아이디" type="text"></FormKit>
           </div>
-          <StoreBtn btn-size="sm" text-size="sm">중복확인</StoreBtn>
+          <StoreBtn text-size="sm">중복확인</StoreBtn>
         </div>
 
         <div class="grid w-full grid-cols-5 gap-x-2">

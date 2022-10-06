@@ -4,7 +4,7 @@
       <FormKit
         :label-class="{
           'text-black': true,
-          'text-gray-400': false,
+          'text-store-gray-dark': false,
         }"
         help="선택항목애 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할
           수 있습니다."

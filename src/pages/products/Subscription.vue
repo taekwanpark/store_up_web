@@ -7,42 +7,14 @@
       <div>
         <div class="w-full rounded-lg border border-store-border">
           <ul
-            class="grid grid-flow-col grid-rows-1 justify-items-center py-4 px-2 text-base font-light text-store-gray-extraDark"
+            class="grid grid-cols-4 justify-items-center gap-1 py-5 text-base font-light text-store-gray-extraDark"
           >
             <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
+              v-for="i in categories"
+              :key="i"
+              class="inline-flex w-32 cursor-pointer items-center justify-center rounded-lg py-2 hover:bg-store-gray-light hover:text-store-red-light"
             >
-              전체보기
-            </li>
-            <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
-            >
-              농산물
-            </li>
-            <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
-            >
-              수산물
-            </li>
-            <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
-            >
-              축산물
-            </li>
-            <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
-            >
-              임산물
-            </li>
-            <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
-            >
-              가공식품
-            </li>
-            <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
-            >
-              공산품
+              {{ i }}
             </li>
           </ul>
         </div>
@@ -61,6 +33,16 @@ import img3 from "@/assets/images/img3.jpg";
 import img5 from "@/assets/images/img5.jpg";
 import img6 from "@/assets/images/img6.jpeg";
 import img7 from "@/assets/images/img7.jpeg";
+
+const categories = [
+  "전체보기",
+  "농산물",
+  "수산물",
+  "축산물",
+  "임산물",
+  "가공식품",
+  "공산품",
+];
 
 const products = [
   {

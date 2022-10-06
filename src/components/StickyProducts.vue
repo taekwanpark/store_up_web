@@ -4,19 +4,19 @@
   >
     <div class="flex w-full flex-col gap-1">
       <div
-        class="flex w-full items-center justify-center rounded-lg border-2 border-store-gray-normal bg-white"
+        class="flex w-full items-center justify-center rounded-lg border-2 border-store-border bg-white"
       >
         <div class="py-2 text-sm font-normal">최근 본 상품</div>
       </div>
       <div
-        class="flex w-full items-center justify-center rounded-lg border-2 border-store-gray-normal bg-white"
+        class="flex w-full items-center justify-center rounded-lg border-2 border-store-border bg-white"
       >
         <div class="h-64 rounded-lg p-2 text-sm font-light">
           최근 본 상품이 없습니다.
         </div>
       </div>
       <div
-        class="flex w-full items-center justify-center rounded-lg border-2 border-store-gray-normal bg-white"
+        class="flex w-full items-center justify-center rounded-lg border-2 border-store-border bg-white"
       >
         <div class="py-2 text-sm font-normal">전체 보기</div>
       </div>

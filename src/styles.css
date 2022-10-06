@@ -8,15 +8,89 @@ html {
 
 body {
     @apply h-full;
-    font-family: 'S-CoreDream-3Light', sans-serif;
+    font-family: 'S-CoreDream', sans-serif;
     box-sizing: border-box;
     letter-spacing: -0.5px;
 
 }
 
 @font-face {
-    font-family: 'S-CoreDream-3Light';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
-    font-weight: normal;
+    font-family: 'S-CoreDream';
+    src: url('./assets/fonts/SCDream1.woff') format('woff');
     font-style: normal;
+    font-weight: 100;
 }
+
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('./assets/fonts/SCDream1.woff') format('woff');
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('./assets/fonts/SCDream1.woff') format('woff');
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('./assets/fonts/SCDream2.woff') format('woff');
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('./assets/fonts/SCDream3.woff') format('woff');
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('./assets/fonts/SCDream4.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('./assets/fonts/SCDream5.woff') format('woff');
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('./assets/fonts/SCDream6.woff') format('woff');
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('./assets/fonts/SCDream7.woff') format('woff');
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('./assets/fonts/SCDream8.woff') format('woff');
+    font-style: normal;
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('./assets/fonts/SCDream9.woff') format('woff');
+    font-style: normal;
+    font-weight: 900;
+}
+
+
+
+
