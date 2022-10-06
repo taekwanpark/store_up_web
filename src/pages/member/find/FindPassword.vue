@@ -19,8 +19,8 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import Modal from "@/components/Modal";
 import InnerXsLayout from "@/components/layouts/InnerXsLayout";
-import PasswordFind from "@/components/inquiry/password/PasswordFind";
-import ResetPassword from "@/components/inquiry/password/resetPassword";
+import PasswordFind from "@/components/member/find/password/FindPasswordComponent";
+import ResetPassword from "@/components/member/find/password/ResetPasswordComponent";
 
 const router = useRouter();
 const isOpen = ref(false);

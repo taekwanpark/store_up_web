@@ -2,7 +2,7 @@
   <div>
     <div>
       <div
-        class="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-gray-50 shadow-inner"
+        class="relative flex w-full items-center justify-center overflow-hidden rounded-lg border border-gray-300"
       >
         <input
           id="search"

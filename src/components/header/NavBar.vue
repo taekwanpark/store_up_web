@@ -107,7 +107,7 @@
           <RouterLink
             v-for="page in navPages"
             :key="page.title"
-            :to="page.to"
+            :to="{ name: page.to }"
             class="text-xl font-medium text-black hover:text-gray-600"
             >{{ page.page }}
           </RouterLink>
@@ -137,23 +137,23 @@ import { ref } from "vue";
 const navPages = [
   {
     page: "베스트",
-    to: "/products/best",
+    to: process.env.STORE_PRODUCTS_BEST,
   },
   {
     page: "신상품",
-    to: "/products/newest",
+    to: process.env.STORE_PRODUCTS_NEWEST,
   },
   {
     page: "떨이할인",
-    to: "/products/discount",
+    to: process.env.STORE_PRODUCTS_DISCOUNT,
   },
   {
     page: "정기구독",
-    to: "/products/subscription",
+    to: process.env.STORE_PRODUCTS_SUBSCRIPTION,
   },
   {
     page: "이벤트",
-    to: "/products/subscription",
+    to: process.env.STORE_PRODUCTS_BEST,
   },
 ];
 

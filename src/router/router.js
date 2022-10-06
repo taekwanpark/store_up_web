@@ -1,91 +1,83 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Main from "@/pages/Main";
-import Login from "@/pages/Login";
-import SignUp from "@/pages/SignUp";
-import IdInquiry from "@/pages/inquiry/IdInquiry";
-import PasswordInquiry from "@/pages/inquiry/PasswordInquiry";
-import BestProducts from "@/pages/BestProducts";
-import NewProducts from "@/pages/NewProducts";
-import DiscountProducts from "@/pages/DiscountProducts";
-import Subscription from "@/pages/Subscription";
+import Login from "@/pages/member/Login";
+import SignUp from "@/pages/member/SignUp";
+import FindId from "@/pages/member/find/FindId";
+import FindPassword from "@/pages/member/find/FindPassword";
+import BestProducts from "@/pages/products/BestProducts";
+import NewestProducts from "@/pages/products/NewestProducts";
+import DiscountProducts from "@/pages/products/DiscountProducts";
+import Subscription from "@/pages/products/Subscription";
 
 const routes = [
   {
-    path: "/",
-    name: "main",
+    path: process.env.STORE_MAIN_PATH,
+    name: process.env.STORE_MAIN,
     component: Main,
   },
   {
-    path: "/login",
-    name: "login",
-    component: Login,
-    meta: { title: "로그인" },
-  },
-  {
-    path: "/signup",
-    name: "signup",
-    component: SignUp,
-    meta: { title: "회원가입" },
-  },
-  {
-    path: "/inquiry/id",
-    name: "idInquiry",
-    component: IdInquiry,
-    meta: { title: "아이디 찾기" },
-  },
-  {
-    path: "/inquiry/password",
-    name: "passwordInquiry",
-    component: PasswordInquiry,
-    meta: { title: "비밀번호 찾기" },
-  },
-  {
-    path: "/products",
+    path: process.env.STORE_MEMBER_BASE,
     children: [
       {
-        path: "best",
-        name: "bestProducts",
+        path: process.env.STORE_MEMBER_LOGIN,
+        name: process.env.STORE_MEMBER_LOGIN,
+        component: Login,
+        meta: { title: "로그인" },
+      },
+      {
+        path: process.env.STORE_MEMBER_SIGNUP,
+        name: process.env.STORE_MEMBER_SIGNUP,
+        component: SignUp,
+        meta: { title: "회원가입" },
+      },
+      {
+        path: process.env.STORE_MEMBER_FIND_BASE,
+        children: [
+          {
+            path: process.env.STORE_MEMBER_FIND_ID,
+            name: process.env.STORE_MEMBER_FIND_ID,
+            component: FindId,
+            meta: { title: "아이디 찾기" },
+          },
+          {
+            path: process.env.STORE_MEMBER_FIND_PW,
+            name: process.env.STORE_MEMBER_FIND_PW,
+            component: FindPassword,
+            meta: { title: "비밀번호 찾기" },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    path: process.env.STORE_PRODUCTS_BASE,
+    children: [
+      {
+        path: process.env.STORE_PRODUCTS_BEST,
+        name: process.env.STORE_PRODUCTS_BEST,
         component: BestProducts,
         meta: { title: "베스트 상품" },
       },
       {
-        path: "newest",
-        name: "newestProducts",
-        component: NewProducts,
+        path: process.env.STORE_PRODUCTS_NEWEST,
+        name: process.env.STORE_PRODUCTS_NEWEST,
+        component: NewestProducts,
         meta: { title: "신상품" },
       },
       {
-        path: "discount",
-        name: "discountProducts",
+        path: process.env.STORE_PRODUCTS_DISCOUNT,
+        name: process.env.STORE_PRODUCTS_DISCOUNT,
         component: DiscountProducts,
         meta: { title: "떨이할인" },
       },
       {
-        path: "subscription",
-        name: "subscription",
+        path: process.env.STORE_PRODUCTS_SUBSCRIPTION,
+        name: process.env.STORE_PRODUCTS_SUBSCRIPTION,
         component: Subscription,
         meta: { title: "정기구독" },
       },
     ],
   },
-  // {
-  //   path: "/products/newest",
-  //   name: "bestProducts",
-  //   component: NewProducts,
-  //   meta: { title: "신상품" },
-  // },
-  // {
-  //   path: "/products/discount",
-  //   name: "bestProducts",
-  //   component: DiscountProducts,
-  //   meta: { title: "떨이할인" },
-  // },
-  // {
-  //   path: "/products/subscription",
-  //   name: "bestProducts",
-  //   component: Subscription,
-  //   meta: { title: "정기구독" },
-  // },
 ];
 const router = createRouter({
   history: createWebHistory(),

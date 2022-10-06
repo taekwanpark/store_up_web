@@ -12,7 +12,7 @@
         leave-to="opacity-0"
       >
         <div
-          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          class="fixed inset-0 bg-store-gray-extraDark bg-opacity-50 transition-opacity"
         />
       </TransitionChild>
 
@@ -39,18 +39,11 @@
               </DialogTitle>
               <Divider />
               <div class="my-16 flex w-full justify-center">
-                <p class="text-2xl text-gray-500">
+                <p class="text-2xl text-store-gray-extraDark">
                   {{ props.text }}
                 </p>
               </div>
               <div class="">
-                <!--                <button-->
-                <!--                  class="text-normal font inline-flex w-full w-auto justify-center rounded-lg border border-transparent bg-gray-500 bg-gray-500 px-14 py-3 text-white shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"-->
-                <!--                  type="button"-->
-                <!--                  @click="closeModal"-->
-                <!--                >-->
-                <!--                  확인-->
-                <!--                </button>-->
                 <StoreBtn btn-size="sm" is-black @click="closeModal"
                   >확인
                 </StoreBtn>

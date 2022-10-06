@@ -5,13 +5,32 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        amuzGray: {
-          f5f5f5: "#F5F5F5",
-          d2d2d2: "#D2D2D2",
-          cacaca: "#CACACA",
-          979797: "#979797",
-          707070: "#707070",
-          E9E9E: "#9E9E9E",
+        store: {
+          placeHolder: `#9ca3af`,
+          border: `#e5e7eb`,
+          gray: {
+            extraLight: `#f9fafb`,
+            light: `#f3f4f6`,
+            normal: `#e5e7eb`,
+            dark: `#9ca3af`,
+            extraDark: `#4b5563`,
+          },
+          red: {
+            dark: `#c3005b`,
+            light: `#ff0055`,
+          },
+          orange: {
+            dark: `#ff5000`,
+            light: `#ff9b00`,
+          },
+          green: {
+            dark: `#00877d`,
+            light: `#00be6e`,
+          },
+          blue: {
+            dark: `#0073ff`,
+            light: `#00aaff`,
+          },
         },
       },
     },
@@ -20,5 +39,6 @@ module.exports = {
   plugins: [
     require("@tailwindcss/forms"),
     require("@formkit/themes/tailwindcss"),
+    require("tailwindcss/colors"),
   ],
 };

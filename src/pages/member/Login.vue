@@ -27,29 +27,29 @@
               <div class="flex items-center">
                 <input
                   id="remember-me"
-                  class="h-4 w-4 rounded border-amuzGray-707070 focus:ring-indigo-500"
+                  class="h-4 w-4 rounded border-store-gray-extraDark focus:ring-indigo-500"
                   name="remember-me"
                   type="checkbox"
                 />
-                <label class="ml-1 block text-sm text-black" for="remember-me"
+                <label class="ml-1 block text-xs text-black" for="remember-me"
                   >아이디 저장</label
                 >
               </div>
 
               <div class="flex items-center space-x-2">
-                <RouterLink class="text-sm" to="/inquiry/id"
+                <RouterLink :to="{ name: findIdLink }" class="text-xs"
                   >아이디 찾기
                 </RouterLink>
                 <span class="inline-block h-3 border-r border-black"></span>
-                <RouterLink class="text-sm" to="/inquiry/password"
+                <RouterLink :to="{ name: findPwLink }" class="text-xs"
                   >비밀번호 찾기
                 </RouterLink>
               </div>
             </div>
 
             <div class="mt-12 flex items-center gap-x-2">
-              <StoreBtn btn-size="custom" is-black>로그인</StoreBtn>
-              <StoreBtn btn-size="custom" route-to="/signup">회원가입</StoreBtn>
+              <StoreBtn is-black>로그인</StoreBtn>
+              <StoreLinkBtn :route-to="signupLink">회원가입</StoreLinkBtn>
             </div>
           </form>
         </div>
@@ -61,5 +61,10 @@
 <script setup>
 import InnerXsLayout from "@/components/layouts/InnerXsLayout";
 import StoreBtn from "@/components/StoreBtn";
+import StoreLinkBtn from "@/components/StoreLinkBtn";
+
+const findIdLink = process.env.STORE_MEMBER_FIND_ID;
+const findPwLink = process.env.STORE_MEMBER_FIND_PW;
+const signupLink = process.env.STORE_MEMBER_SIGNUP;
 </script>
 <script></script>

@@ -6,21 +6,21 @@
     <Divider />
     <div class="my-3 flex items-center justify-center gap-x-1">
       <div
-        :class="props.currentTab === 'terms' ? '' : 'text-gray-400'"
+        :class="props.currentTab === 'terms' ? '' : 'text-store-gray-dark'"
         class="inline-flex items-center"
       >
         <div class="leading-none">01 약관동의</div>
-        <ChevronRightIcon class="mt-[2px] h-4 w-4" />
+        <ChevronRightIcon class="mb-1 h-4 w-4" />
       </div>
       <div
-        :class="props.currentTab === 'userInfo' ? '' : 'text-gray-400'"
+        :class="props.currentTab === 'userInfo' ? '' : 'text-store-gray-dark'"
         class="inline-flex items-center"
       >
         <div class="leading-none">02 정보입력</div>
-        <ChevronRightIcon class="mt-[2px] h-4 w-4" />
+        <ChevronRightIcon class="mb-1 h-4 w-4" />
       </div>
       <div
-        :class="props.currentTab === 'approval' ? '' : 'text-gray-400'"
+        :class="props.currentTab === 'approval' ? '' : 'text-store-gray-dark'"
         class="inline-flex items-center"
       >
         <div class="leading-none">03 가입완료</div>

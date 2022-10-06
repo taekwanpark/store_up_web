@@ -5,42 +5,42 @@
         <span class="text-2xl font-semibold">정기구독</span>
       </div>
       <div>
-        <div class="w-full rounded-lg border">
+        <div class="w-full rounded-lg border border-store-border">
           <ul
-            class="grid grid-flow-col grid-rows-1 justify-items-center py-4 px-2 text-base font-light text-gray-500"
+            class="grid grid-flow-col grid-rows-1 justify-items-center py-4 px-2 text-base font-light text-store-gray-extraDark"
           >
             <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-gray-50 hover:text-red-500"
+              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
             >
               전체보기
             </li>
             <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-gray-50 hover:text-red-500"
+              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
             >
               농산물
             </li>
             <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-gray-50 hover:text-red-500"
+              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
             >
               수산물
             </li>
             <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-gray-50 hover:text-red-500"
+              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
             >
               축산물
             </li>
             <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-gray-50 hover:text-red-500"
+              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
             >
               임산물
             </li>
             <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-gray-50 hover:text-red-500"
+              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
             >
               가공식품
             </li>
             <li
-              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-gray-50 hover:text-red-500"
+              class="inline-flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg px-6 py-2 hover:bg-store-gray-extraLight hover:text-store-red-light"
             >
               공산품
             </li>

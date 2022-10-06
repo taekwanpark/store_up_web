@@ -1,6 +1,6 @@
 <template>
   <div class="mt-[50px] mb-[71px] flex w-full">
-    <!--	customer center + inquiry Column-->
+    <!--	customer center + find Column-->
     <InquiryCol />
     <!--		company information Column-->
     <InformationCol />

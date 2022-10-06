@@ -101,7 +101,7 @@
 
 <script setup>
 import Divider from "@/components/Divider";
-import UserInfoTerms from "@/components/signup/userInfo/UserInfoTerms";
+import UserInfoTerms from "@/components/member/signup/userInfo/UserInfoTerms";
 import Modal from "@/components/Modal";
 import InnerSmLayout from "@/components/layouts/InnerSmLayout";
 import { ref } from "vue";

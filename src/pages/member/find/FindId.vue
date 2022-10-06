@@ -20,9 +20,9 @@
 
 <script setup>
 import { ref } from "vue";
-import IdFind from "@/components/inquiry/id/IdFind";
+import IdFind from "@/components/member/find/id/FindIdComponent";
 import Modal from "@/components/Modal";
-import IdFound from "@/components/inquiry/id/IdFound";
+import IdFound from "@/components/member/find/id/FoundIdComponent";
 import InnerXsLayout from "@/components/layouts/InnerXsLayout";
 
 const isOpen = ref(false);

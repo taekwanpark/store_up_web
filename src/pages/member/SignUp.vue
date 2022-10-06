@@ -17,11 +17,11 @@
 </template>
 
 <script setup>
-import Terms from "@/components/signup/terms/Terms";
-import SignupHeader from "@/components/signup/SignupHeader";
+import Terms from "@/components/member/signup/terms/Terms";
+import SignupHeader from "@/components/member/signup/SignupHeader";
 import { ref } from "vue";
-import Approval from "@/components/signup/Approval";
-import UserInfo from "@/components/signup/userInfo/UserInfo";
+import Approval from "@/components/member/signup/Approval";
+import UserInfo from "@/components/member/signup/userInfo/UserInfo";
 import InnerLgLayout from "@/components/layouts/InnerLgLayout";
 
 const currentTab = ref("terms");

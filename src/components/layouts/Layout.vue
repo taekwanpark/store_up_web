@@ -2,7 +2,7 @@
   <div class="m-auto flex h-full w-full max-w-[1920px] flex-col">
     <!--		banner-->
     <div
-      class="flex h-16 w-full flex-none items-center justify-center bg-gray-100"
+      class="flex h-16 w-full flex-none items-center justify-center bg-store-gray-light"
     >
       <div>3만원 이상 무료배송!</div>
     </div>
@@ -29,4 +29,8 @@ import { useRoute } from "vue-router";
 import StickyProducts from "@/components/StickyProducts";
 
 const route = useRoute();
+console.log(route.fullPath);
+console.log(route.path);
+console.log(route.params);
+console.log(route.query);
 </script>

@@ -9,7 +9,7 @@
       <div>평일 10:00 ~ 18:00 / 토, 일요일, 공휴일 휴무</div>
       <div>점심시간 12:00 ~ 13:00</div>
     </div>
-    <!--			inquiry button-->
+    <!--			find button-->
     <ul class="mt-5 flex justify-between space-x-2">
       <li
         class="flex h-10 w-28 cursor-pointer items-center justify-center bg-white"

@@ -10,18 +10,18 @@
         class="group flex cursor-pointer items-center justify-end"
       >
         <div
-          class="h-5 text-lg leading-none text-gray-500 group-hover:text-gray-600"
+          class="pt-1 text-lg text-store-gray-extraDark group-hover:text-store-gray-dark"
         >
           더보기
         </div>
         <ChevronRightIcon
-          class="h-5 w-5 text-gray-600 group-hover:text-gray-800"
+          class="h-5 w-5 text-store-gray-extraDark group-hover:text-store-gray-dark"
         />
       </div>
     </div>
     <div v-if="isPage" class="mt-10 mb-4 flex w-full justify-between">
-      <div class="text-xs text-gray-500">총 157건</div>
-      <div class="cursor-pointer text-xs text-gray-500">
+      <div class="text-xs text-store-gray-extraDark">총 157건</div>
+      <div class="cursor-pointer text-xs text-store-gray-extraDark">
         최신순 | 낮은가격순 | 높은 가격순
       </div>
     </div>
@@ -39,7 +39,7 @@
           />
 
           <div
-            class="absolute bottom-0 h-full w-full cursor-pointer opacity-0 transition-all duration-300 ease-in-out group-hover:bg-white group-hover:opacity-30"
+            class="absolute bottom-0 h-full w-full cursor-pointer opacity-0 transition-all duration-300 ease-in-out group-hover:bg-black group-hover:opacity-30"
           ></div>
 
           <div
@@ -67,7 +67,7 @@
         </div>
         <div class="mt-4 space-y-2">
           <div class="flex items-center justify-between gap-x-2">
-            <h3 class="text-base text-gray-500">
+            <h3 class="text-base text-store-gray-extraDark">
               {{ product.name }}
             </h3>
             <span

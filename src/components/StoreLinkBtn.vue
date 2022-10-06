@@ -25,9 +25,8 @@
         'rounded-full': props.isRound === true,
       },
     }"
-    :type="isSubmit ? 'submit' : 'button'"
-    @click="btnClick"
-    v-on="isSubmit ? {} : { click: goToRoute }"
+    type="button"
+    @click="goToRoute"
   >
     <slot />
   </FormKit>
@@ -43,16 +42,9 @@ const props = defineProps({
   isBlack: { type: Boolean, default: false },
   textSize: { type: String, default: "base" },
   isBold: { type: Boolean, default: false },
-  isSubmit: { type: Boolean, default: false },
   routeTo: { type: String },
 });
 const goToRoute = () => {
-  if (props.routeTo) {
-    router.push(`${props.routeTo}`);
-  }
-};
-const emits = defineEmits(["btnClick"]);
-const btnClick = () => {
-  emits("btnClick");
+  router.push({ name: props.routeTo });
 };
 </script>

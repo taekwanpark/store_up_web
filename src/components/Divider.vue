@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full border-t-[0.5px] border-amuzGray-707070" />
+  <div class="w-full border-t border-store-border" />
 </template>
 
 <script setup></script>
