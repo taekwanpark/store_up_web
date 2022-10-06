@@ -7,12 +7,12 @@
       <div>
         <div class="w-full rounded-lg border border-store-border">
           <ul
-            class="grid grid-cols-4 justify-items-center gap-1 py-5 text-base font-light text-store-gray-extraDark"
+            class="grid grid-cols-4 justify-items-start gap-1 py-5 px-14 text-base font-light text-store-gray-extraDark"
           >
             <li
               v-for="i in categories"
               :key="i"
-              class="inline-flex w-32 cursor-pointer items-center justify-center rounded-lg py-2 hover:bg-store-gray-light hover:text-store-red-light"
+              class="flex cursor-pointer items-center justify-start rounded-lg px-5 pt-3 pb-2 hover:bg-store-gray-light hover:text-store-red-light"
             >
               {{ i }}
             </li>
