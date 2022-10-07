@@ -53,7 +53,7 @@
                       />
                       <div class="ml-4">
                         <RouterLink
-                          :to="{ name: item.to, params: { id: '001' } }"
+                          :to="{ name: item.to, params: { id: item.id } }"
                           class="whitespace-nowrap text-base font-normal leading-none"
                         >
                           {{ item.title }}
@@ -80,9 +80,9 @@
           <RouterLink
             v-for="page in navigation"
             :key="page.title"
-            :active-class="process.env.ACTIVE_LINK"
             :to="{ name: page.to }"
-            class="text-xl font-medium text-black hover:text-gray-600"
+            active-class=""
+            class="text-xl font-medium text-black hover:text-store-gray-extraDark"
             >{{ page.page }}
           </RouterLink>
         </PopoverGroup>
@@ -101,6 +101,8 @@ import {
 } from "@headlessui/vue";
 import { Bars3Icon } from "@heroicons/vue/24/outline";
 import { groupList, navigation } from "@/assets/groupList";
+
+const active = process.env.STORE_ACTIVE_LINK;
 
 const showChildGroup = ref(false);
 const parentGroupTitle = ref("");

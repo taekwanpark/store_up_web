@@ -1,11 +1,12 @@
 <template>
   <ProductCategoryLayout>
     <MainProductList
+      :category="currentGroup"
       :products="products"
+      :title="currentGroup.title"
       list-amount="999"
       show-category
       show-sort
-      title="농산품"
     />
   </ProductCategoryLayout>
 </template>
@@ -14,16 +15,13 @@
 import ProductCategoryLayout from "@/components/products/ProductCategoryLayout";
 import MainProductList from "@/components/products/ProductsList";
 import { products } from "@/assets/productsList";
-import { useRoute } from "vue-router";
-
-const route = useRoute();
-console.log(route);
-console.log(route.path);
-console.log(route.params);
-console.log(route.query);
+import { groupList } from "@/assets/groupList";
+import { computed } from "vue";
 
 const props = defineProps({
-  abc: String,
+  id: String,
 });
-console.log(props.abc);
+const currentGroup = computed(() => {
+  return groupList.find((o) => o.id === props.id);
+});
 </script>

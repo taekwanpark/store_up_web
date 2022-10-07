@@ -122,5 +122,6 @@ const props = defineProps({
   products: { type: Array, required: true },
   showSort: { type: Boolean, default: true },
   showCategory: { type: Boolean, default: false },
+  category: { type: Object },
 });
 </script>

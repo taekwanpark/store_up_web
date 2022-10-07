@@ -4,6 +4,6 @@ import Layout from "@/components/common/layouts/Layout";
 
 <template>
   <Layout>
-    <RouterView />
+    <RouterView :key="$route.path" />
   </Layout>
 </template>
