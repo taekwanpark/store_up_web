@@ -4,26 +4,26 @@
 const textClassification = {
   wrapper: "flex items-center",
   label:
-    "inline-block font-base text-normal formkit-invalid:text-store-red-light w-44",
+    "inline-block font-base text-normal formkit-invalid:text-store-red-light w-40",
   inner: `
     w-full
     border
-    border-store-gray-dark
+    border-store-border
     formkit-invalid:border-store-red-light
     rounded-lg
     overflow-hidden
     focus-within:border-store-blue-light
   `,
   input:
-    "w-full px-3 pt-3 pb-2 border-none text-base text-black placeholder:text-sm placeholder:text-store-placeHolder",
+    "w-full px-3 pt-3 pb-2  border-none text-base text-black placeholder:text-sm placeholder:text-store-placeHolder",
 };
 const boxClassification = {
-  fieldset: "max-w-md border border-store-gray-dark rounded-md px-2 pb-1",
+  // fieldset: "max-w-md border border-store-gray-dark rounded-md px-2 pb-1",
   legend: "font-bold text-sm",
   wrapper: "flex items-center cursor-pointer",
   help: "text-normal ml-7 whitespace-nowrap",
   inner: "flex items-center",
-  label: "text-normal font-medium text-store-gray-dark mt-[2.5px] ",
+  label: "text-normal font-normal text-store-gray-dark mt-[2.5px] ",
   input:
     "form-check-input appearance-none h-5 w-5 mr-2 border border-store-gray-dark rounded-full bg-white checked:bg-blue-600 focus:outline-none focus:ring-0 transition duration-200",
 };
@@ -31,7 +31,7 @@ const buttonClassification = {
   wrapper: "w-full h-full",
   outer: "w-full h-full",
   input:
-    "h-full border border-store-gray-dark focus:outline-none focus:ring-2 focus:ring-store-blue-light focus:ring-offset-2",
+    "h-full border border-store-border box-border focus:outline-none focus:ring-2 focus:ring-store-blue-light focus:ring-offset-2",
 };
 
 // export our definitions using our above

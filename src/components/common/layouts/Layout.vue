@@ -25,12 +25,8 @@
 <script setup>
 import Header from "../header/Header";
 import Footer from "@/components/common/footer/Footer";
-import { useRoute } from "vue-router";
 import StickyProducts from "@/components/common/StickyProducts";
+import { useRoute } from "vue-router";
 
 const route = useRoute();
-console.log(route.fullPath);
-console.log(route.path);
-console.log(route.params);
-console.log(route.query);
 </script>

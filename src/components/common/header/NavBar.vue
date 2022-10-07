@@ -32,16 +32,17 @@
             >
               <PopoverPanel class="absolute z-10 -ml-2 mt-5 w-screen max-w-fit">
                 <div
-                  :class="secondaryCategories ? 'w-80' : 'w-40'"
+                  :class="showChildGroup ? 'w-80' : 'w-40'"
                   class="flex divide-x-2 overflow-hidden rounded-lg shadow-lg transition-all duration-700 ease-in-out"
                   @mouseleave="mouseLeave"
                 >
+                  <!--parent group-->
                   <ul
                     class="relative z-20 flex w-40 flex-col justify-start gap-1 rounded-l-lg bg-white p-4"
                   >
                     <li
-                      v-for="item in solutions"
-                      :key="item.name"
+                      v-for="item in groupList"
+                      :key="item.title"
                       class="flex h-10 w-32 cursor-pointer items-center rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
                       @mouseenter="mouseEnter"
                     >
@@ -51,62 +52,35 @@
                         class="h-5 w-5 flex-shrink-0"
                       />
                       <div class="ml-4">
-                        <p
+                        <RouterLink
+                          :to="{ name: item.to, params: { id: '001' } }"
                           class="whitespace-nowrap text-base font-normal leading-none"
                         >
-                          {{ item.name }}
-                        </p>
+                          {{ item.title }}
+                        </RouterLink>
                       </div>
                     </li>
                   </ul>
-
+                  <!--child group-->
                   <ul
-                    class="relative z-20 grid w-44 gap-1 rounded-r-lg bg-white p-4"
+                    class="relative z-20 flex w-40 flex-col justify-start gap-1 rounded-l-lg bg-white p-4"
                   >
                     <li
+                      v-for="childItem in childGroupList"
+                      :key="childItem.name"
                       class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
                     >
-                      백미/현미
-                    </li>
-                    <li
-                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
-                    >
-                      찹쌀/잡곡/곡류
-                    </li>
-                    <li
-                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
-                    >
-                      김치
-                    </li>
-                    <li
-                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
-                    >
-                      과일/견과
-                    </li>
-                    <li
-                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
-                    >
-                      채소/나물
-                    </li>
-                    <li
-                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
-                    >
-                      농산 가공식품
-                    </li>
-                    <li
-                      class="flex h-10 w-28 cursor-pointer items-start whitespace-nowrap rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
-                    >
-                      기타 농산품
+                      {{ childItem.name }}
                     </li>
                   </ul>
                 </div>
               </PopoverPanel>
             </transition>
           </Popover>
-
           <RouterLink
-            v-for="page in navPages"
+            v-for="page in navigation"
             :key="page.title"
+            :active-class="process.env.ACTIVE_LINK"
             :to="{ name: page.to }"
             class="text-xl font-medium text-black hover:text-gray-600"
             >{{ page.page }}
@@ -118,85 +92,29 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import {
   Popover,
   PopoverButton,
   PopoverGroup,
   PopoverPanel,
 } from "@headlessui/vue";
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartBarIcon,
-  CursorArrowRaysIcon,
-  ShieldCheckIcon,
-  Squares2X2Icon,
-} from "@heroicons/vue/24/outline";
-import { ref } from "vue";
+import { Bars3Icon } from "@heroicons/vue/24/outline";
+import { groupList, navigation } from "@/assets/groupList";
 
-const navPages = [
-  {
-    page: "베스트",
-    to: process.env.STORE_PRODUCTS_BEST,
-  },
-  {
-    page: "신상품",
-    to: process.env.STORE_PRODUCTS_NEWEST,
-  },
-  {
-    page: "떨이할인",
-    to: process.env.STORE_PRODUCTS_DISCOUNT,
-  },
-  {
-    page: "정기구독",
-    to: process.env.STORE_PRODUCTS_SUBSCRIPTION,
-  },
-  {
-    page: "이벤트",
-    to: process.env.STORE_PRODUCTS_BEST,
-  },
-];
+const showChildGroup = ref(false);
+const parentGroupTitle = ref("");
+const childGroupList = ref([]);
 
-const solutions = [
-  {
-    name: "농산물",
-    href: "#",
-    icon: ChartBarIcon,
-  },
-  {
-    name: "수산물",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "축산물",
-    href: "#",
-    icon: ShieldCheckIcon,
-  },
-  {
-    name: "임산물",
-    href: "#",
-    icon: Squares2X2Icon,
-  },
-  {
-    name: "가공식품",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-  {
-    name: "공산품",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const secondaryCategories = ref(false);
-
-const mouseEnter = () => {
-  secondaryCategories.value = true;
-  console.log(secondaryCategories.value);
+const mouseEnter = (e) => {
+  showChildGroup.value = true;
+  parentGroupTitle.value = e.target.innerText;
+  childGroupList.value = groupList.find(
+    (o) => o.title === parentGroupTitle.value
+  )?.childGroupList;
 };
 const mouseLeave = () => {
-  secondaryCategories.value = false;
+  showChildGroup.value = false;
 };
 </script>
 <style></style>

@@ -4,7 +4,7 @@
       <span class="text-2xl font-bold">회원가입</span>
     </div>
     <Divider />
-    <div class="my-3 flex items-center justify-center gap-x-1">
+    <div class="mt-3 mb-2 flex items-center justify-center gap-x-1">
       <div
         :class="props.currentTab === 'terms' ? '' : 'text-store-gray-dark'"
         class="inline-flex items-center"

@@ -53,22 +53,21 @@
         </div>
 
         <div class="grid w-full grid-cols-5 gap-x-2">
-          <div class="invisible"></div>
+          <!--          <div class="invisible w-40"></div>-->
           <div class="col-span-4">
             <FormKit
               label="배송 주소2"
-              label-class="hidden"
+              label-class="text-white"
               type="text"
             ></FormKit>
           </div>
         </div>
 
         <div class="grid w-full grid-cols-5 gap-x-2">
-          <div class="invisible"></div>
           <div class="col-span-4">
             <FormKit
               label="배송 주소3"
-              label-class="hidden"
+              label-class="text-white"
               type="text"
             ></FormKit>
           </div>

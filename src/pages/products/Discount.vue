@@ -1,17 +1,16 @@
 <template>
-  <ProductCategoryLayout>
+  <ProductLayout>
     <MainProductList
       :products="products"
       list-amount="999"
-      show-category
       show-sort
-      title="정기구독"
+      title="떨이할인"
     />
-  </ProductCategoryLayout>
+  </ProductLayout>
 </template>
 
 <script setup>
 import MainProductList from "@/components/products/ProductsList";
+import ProductLayout from "@/components/products/ProductLayout";
 import { products } from "@/assets/productsList";
-import ProductCategoryLayout from "@/components/products/ProductCategoryLayout";
 </script>

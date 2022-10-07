@@ -4,14 +4,16 @@ import Login from "@/pages/member/Login";
 import SignUp from "@/pages/member/SignUp";
 import FindId from "@/pages/member/find/FindId";
 import FindPassword from "@/pages/member/find/FindPassword";
-import BestProducts from "@/pages/products/BestProducts";
-import NewestProducts from "@/pages/products/NewestProducts";
-import DiscountProducts from "@/pages/products/DiscountProducts";
+import Best from "@/pages/products/Best";
+import Newest from "@/pages/products/Newest";
+import Discount from "@/pages/products/Discount";
 import Subscription from "@/pages/products/Subscription";
+import Products from "@/pages/products/Products";
+import Promotion from "@/pages/Promotion";
 
 const routes = [
   {
-    path: process.env.STORE_MAIN_PATH,
+    path: process.env.STORE_MAIN_BASE,
     name: process.env.STORE_MAIN,
     component: Main,
   },
@@ -55,19 +57,19 @@ const routes = [
       {
         path: process.env.STORE_PRODUCTS_BEST,
         name: process.env.STORE_PRODUCTS_BEST,
-        component: BestProducts,
-        meta: { title: "베스트 상품" },
+        component: Best,
+        meta: { title: "베스트" },
       },
       {
         path: process.env.STORE_PRODUCTS_NEWEST,
         name: process.env.STORE_PRODUCTS_NEWEST,
-        component: NewestProducts,
+        component: Newest,
         meta: { title: "신상품" },
       },
       {
         path: process.env.STORE_PRODUCTS_DISCOUNT,
         name: process.env.STORE_PRODUCTS_DISCOUNT,
-        component: DiscountProducts,
+        component: Discount,
         meta: { title: "떨이할인" },
       },
       {
@@ -76,7 +78,19 @@ const routes = [
         component: Subscription,
         meta: { title: "정기구독" },
       },
+      {
+        path: `${process.env.STORE_PRODUCTS_CATEGORY}/:id`,
+        name: process.env.STORE_PRODUCTS_CATEGORY,
+        component: Products,
+        props: true,
+      },
     ],
+  },
+  {
+    path: process.env.STORE_PROMOTION_PATH,
+    name: process.env.STORE_PROMOTION,
+    component: Promotion,
+    meta: { title: "이벤트" },
   },
 ];
 const router = createRouter({
@@ -86,6 +100,9 @@ const router = createRouter({
 
 const defaultTitle = "Store Up";
 router.beforeEach((to, from) => {
-  window.document.title = to.meta.title ? to.meta.title : defaultTitle;
+  window.document.title = to.meta.title
+    ? `온니샵 | ${to.meta.title}`
+    : defaultTitle;
 });
+
 export default router;

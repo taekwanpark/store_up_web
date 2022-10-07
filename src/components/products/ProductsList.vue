@@ -1,14 +1,14 @@
 <template>
-  <div class="py-14">
-    <div
-      :class="isPage ? 'justify-center' : 'justify-between'"
-      class="mb-6 flex items-center"
-    >
-      <div class="text-2xl font-semibold">{{ title }}</div>
-      <div
-        v-if="!isPage"
-        class="group flex cursor-pointer items-center justify-end"
-      >
+  <div>
+    <!--		page header-->
+    <div class="flex flex-col items-center justify-center">
+      <PageTitle :show-sort="showSort">{{ title }}</PageTitle>
+      <ProductCategory :show-category="showCategory" />
+    </div>
+
+    <!--		show sort : false-->
+    <div v-if="!showSort" class="flex h-10 w-full items-center justify-end">
+      <div class="group flex cursor-pointer items-center justify-end">
         <div
           class="pt-1 text-lg text-store-gray-extraDark group-hover:text-store-gray-dark"
         >
@@ -19,16 +19,20 @@
         />
       </div>
     </div>
-    <div v-if="isPage" class="mt-10 mb-4 flex w-full justify-between">
+
+    <!--		show sort : true-->
+    <div v-if="showSort" class="flex h-10 w-full items-center justify-between">
       <div class="text-xs text-store-gray-extraDark">총 157건</div>
       <div class="cursor-pointer text-xs text-store-gray-extraDark">
         최신순 | 낮은가격순 | 높은 가격순
       </div>
     </div>
+
+    <!--		products list : all-->
     <ul class="grid grid-cols-4 gap-x-6 gap-y-20" role="list">
       <li
         v-for="product in products.slice(0, parseInt(listAmount))"
-        :key="product.email"
+        :key="product.name"
         class="col-span-1 flex flex-col overflow-hidden bg-white"
       >
         <div class="group relative overflow-hidden rounded-lg shadow-lg">
@@ -71,7 +75,7 @@
               {{ product.name }}
             </h3>
             <span
-              v-if="product.subscription"
+              v-if="product.is_subscribe"
               class="inline-flex items-center rounded-xl bg-store-gray-normal px-2 pb-0.5 pt-1 text-center text-xs font-normal text-store-blue-dark"
               >정기구독</span
             >
@@ -79,14 +83,21 @@
           <div class="text-base">새콤달콤 괴정 감귤 500g</div>
           <!--					discount-->
           <div class="flex items-center gap-2">
-            <div v-if="product.discount" class="text-lg text-store-red-light">
-              {{ product.discount_pt }} <span> %</span>
+            <div
+              v-if="product.on_discount"
+              class="text-lg text-store-red-light"
+            >
+              {{ product.discount_percentage }} <span> %</span>
             </div>
-            <div v-if="product.discount" class="text-sm text-store-gray-dark">
-              <del>{{ product.original_price }} <span>원</span></del>
+            <div
+              v-if="product.on_discount"
+              class="text-sm text-store-gray-dark"
+            >
+              <del>{{ product.price }} <span>원</span></del>
             </div>
             <div class="text-lg">
-              {{ product.selling_price }} <span> 원</span>
+              {{ product.on_discount ? product.discount_price : product.price }}
+              <span> 원</span>
             </div>
           </div>
         </div>
@@ -101,12 +112,15 @@ import {
   HeartIcon as HeartIconLine,
   ShoppingCartIcon as ShoppingCartIconLine,
 } from "@heroicons/vue/24/outline";
+import PageTitle from "@/components/common/PageTitle";
+import ProductCategory from "@/components/products/ProductCategoryBox";
 
 const props = defineProps({
   title: { type: String },
   routeTo: { type: String },
   listAmount: { type: String, default: "8" },
   products: { type: Array, required: true },
-  isPage: { type: Boolean, default: false },
+  showSort: { type: Boolean, default: true },
+  showCategory: { type: Boolean, default: false },
 });
 </script>
