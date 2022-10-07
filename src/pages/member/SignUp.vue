@@ -22,7 +22,7 @@ import SignupHeader from "@/components/member/signup/SignupHeader";
 import { ref } from "vue";
 import Approval from "@/components/member/signup/Approval";
 import UserInfo from "@/components/member/signup/userInfo/UserInfo";
-import InnerLgLayout from "@/components/layouts/InnerLgLayout";
+import InnerLgLayout from "@/components/common/layouts/InnerLgLayout";
 
 const currentTab = ref("terms");
 

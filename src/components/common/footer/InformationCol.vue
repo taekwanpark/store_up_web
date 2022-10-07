@@ -37,5 +37,5 @@
 </template>
 
 <script setup>
-import Instagram from "@/components/icons/Instagram";
+import Instagram from "@/assets/icons/Instagram";
 </script>

@@ -59,9 +59,9 @@
 </template>
 
 <script setup>
-import InnerXsLayout from "@/components/layouts/InnerXsLayout";
-import StoreBtn from "@/components/StoreBtn";
-import StoreLinkBtn from "@/components/StoreLinkBtn";
+import InnerXsLayout from "@/components/common/layouts/InnerXsLayout";
+import StoreBtn from "@/components/common/StoreBtn";
+import StoreLinkBtn from "@/components/common/StoreLinkBtn";
 
 const findIdLink = process.env.STORE_MEMBER_FIND_ID;
 const findPwLink = process.env.STORE_MEMBER_FIND_PW;

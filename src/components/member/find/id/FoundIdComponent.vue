@@ -24,6 +24,6 @@
 
 <script setup>
 import { UserCircleIcon } from "@heroicons/vue/24/outline";
-import StoreBtn from "@/components/StoreBtn";
+import StoreBtn from "@/components/common/StoreBtn";
 </script>
 <script></script>

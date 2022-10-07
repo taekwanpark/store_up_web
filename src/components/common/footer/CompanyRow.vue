@@ -8,6 +8,6 @@
 </template>
 
 <script setup>
-import InquiryCol from "@/components/footer/InquiryCol";
-import InformationCol from "@/components/footer/InformationCol";
+import InquiryCol from "@/components/common/footer/InquiryCol";
+import InformationCol from "@/components/common/footer/InformationCol";
 </script>

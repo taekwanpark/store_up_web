@@ -32,7 +32,7 @@
 
 <script setup>
 import { ChevronRightIcon } from "@heroicons/vue/24/outline";
-import Divider from "@/components/Divider";
+import Divider from "@/components/common/Divider";
 
 const props = defineProps({
   currentTab: { type: String, default: "terms" },

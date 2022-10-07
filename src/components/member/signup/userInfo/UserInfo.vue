@@ -100,12 +100,12 @@
 </template>
 
 <script setup>
-import Divider from "@/components/Divider";
+import Divider from "@/components/common/Divider";
 import UserInfoTerms from "@/components/member/signup/userInfo/UserInfoTerms";
-import Modal from "@/components/Modal";
-import InnerSmLayout from "@/components/layouts/InnerSmLayout";
+import Modal from "@/components/common/Modal";
+import InnerSmLayout from "@/components/common/layouts/InnerSmLayout";
 import { ref } from "vue";
-import StoreBtn from "@/components/StoreBtn";
+import StoreBtn from "@/components/common/StoreBtn";
 
 const isOpen = ref(false);
 

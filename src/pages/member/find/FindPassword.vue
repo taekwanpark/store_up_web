@@ -17,8 +17,8 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import Modal from "@/components/Modal";
-import InnerXsLayout from "@/components/layouts/InnerXsLayout";
+import Modal from "@/components/common/Modal";
+import InnerXsLayout from "@/components/common/layouts/InnerXsLayout";
 import PasswordFind from "@/components/member/find/password/FindPasswordComponent";
 import ResetPassword from "@/components/member/find/password/ResetPasswordComponent";
 

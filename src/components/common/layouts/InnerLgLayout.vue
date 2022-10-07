@@ -7,5 +7,5 @@
 </template>
 
 <script setup>
-import ArrangeLayout from "@/components/layouts/ArrangeLayout";
+import ArrangeLayout from "@/components/common/layouts/ArrangeLayout";
 </script>

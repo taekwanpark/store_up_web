@@ -17,7 +17,7 @@
 
 <script setup>
 import { CheckCircleIcon } from "@heroicons/vue/24/solid";
-import StoreLinkBtn from "@/components/StoreLinkBtn";
+import StoreLinkBtn from "@/components/common/StoreLinkBtn";
 
 const main = process.env.STORE_MAIN;
 const login = process.env.STORE_MEMBER_LOGIN;

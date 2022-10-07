@@ -15,8 +15,8 @@
 </template>
 
 <script setup>
-import SearchRow from "@/components/header/SearchBox";
-import ProfileRow from "@/components/header/ProfileBox";
+import SearchRow from "@/components/common/header/SearchBox";
+import ProfileRow from "@/components/common/header/ProfileBox";
 import { useRouter } from "vue-router";
 
 const router = useRouter();

@@ -21,9 +21,9 @@
 <script setup>
 import { ref } from "vue";
 import IdFind from "@/components/member/find/id/FindIdComponent";
-import Modal from "@/components/Modal";
+import Modal from "@/components/common/Modal";
 import IdFound from "@/components/member/find/id/FoundIdComponent";
-import InnerXsLayout from "@/components/layouts/InnerXsLayout";
+import InnerXsLayout from "@/components/common/layouts/InnerXsLayout";
 
 const isOpen = ref(false);
 const currentTab = ref("find");

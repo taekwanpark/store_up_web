@@ -49,9 +49,9 @@
 </template>
 
 <script setup>
-import Divider from "@/components/Divider";
+import Divider from "@/components/common/Divider";
 import Term from "@/components/member/signup/terms/Term";
-import StoreBtn from "@/components/StoreBtn";
+import StoreBtn from "@/components/common/StoreBtn";
 import { ref, watch } from "vue";
 
 const props = defineProps({

@@ -65,8 +65,8 @@ import {
   TransitionRoot,
 } from "@headlessui/vue";
 import { defineEmits, defineProps } from "vue";
-import Divider from "@/components/Divider";
-import StoreBtn from "@/components/StoreBtn";
+import Divider from "@/components/common/Divider";
+import StoreBtn from "@/components/common/StoreBtn";
 
 const props = defineProps({
   isOpen: { type: Boolean, required: true },

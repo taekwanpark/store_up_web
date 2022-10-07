@@ -77,8 +77,18 @@
             >
           </div>
           <div class="text-base">새콤달콤 괴정 감귤 500g</div>
-
-          <div class="text-lg">{{ product.price }} <span> 원</span></div>
+          <!--					discount-->
+          <div class="flex items-center gap-2">
+            <div v-if="product.discount" class="text-lg text-store-red-light">
+              {{ product.discount_pt }} <span> %</span>
+            </div>
+            <div v-if="product.discount" class="text-sm text-store-gray-dark">
+              <del>{{ product.original_price }} <span>원</span></del>
+            </div>
+            <div class="text-lg">
+              {{ product.selling_price }} <span> 원</span>
+            </div>
+          </div>
         </div>
       </li>
     </ul>

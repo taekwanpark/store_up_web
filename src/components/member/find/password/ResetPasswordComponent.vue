@@ -30,7 +30,7 @@
 </template>
 
 <script setup>
-import StoreBtn from "@/components/StoreBtn";
+import StoreBtn from "@/components/common/StoreBtn";
 
 const emits = defineEmits(["changePw"]);
 const changePw = () => {
