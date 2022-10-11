@@ -36,13 +36,13 @@
                   class="flex divide-x-2 overflow-hidden rounded-lg shadow-lg transition-all duration-700 ease-in-out"
                   @mouseleave="mouseLeave"
                 >
-                  <!--parent group-->
+                  <!--parent category-->
                   <ul
                     class="relative z-20 flex w-40 flex-col justify-start gap-1 rounded-l-lg bg-white p-4"
                   >
                     <li
-                      v-for="item in groupList"
-                      :key="item.title"
+                      v-for="item in productCategory"
+                      :key="item.name"
                       class="flex h-10 w-32 cursor-pointer items-center rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
                       @mouseenter="mouseEnter"
                     >
@@ -53,15 +53,18 @@
                       />
                       <div class="ml-4">
                         <RouterLink
-                          :to="{ name: item.to, params: { id: item.id } }"
+                          :to="{
+                            name: item.to,
+                            query: { categoryId: item.categoryId },
+                          }"
                           class="whitespace-nowrap text-base font-normal leading-none"
                         >
-                          {{ item.title }}
+                          {{ item.name }}
                         </RouterLink>
                       </div>
                     </li>
                   </ul>
-                  <!--child group-->
+                  <!--child category-->
                   <ul
                     class="relative z-20 flex w-40 flex-col justify-start gap-1 rounded-l-lg bg-white p-4"
                   >
@@ -78,12 +81,16 @@
             </transition>
           </Popover>
           <RouterLink
-            v-for="page in navigation"
-            :key="page.title"
-            :to="{ name: page.to }"
-            active-class=""
+            v-for="item in pageCategory"
+            :key="item.name"
+            :to="{ name: item.to, query: { categoryId: item.categoryId } }"
             class="text-xl font-medium text-black hover:text-store-gray-extraDark"
-            >{{ page.page }}
+            >{{ item.name }}
+          </RouterLink>
+          <RouterLink
+            :to="promotionLink"
+            class="text-xl font-medium text-black hover:text-store-gray-extraDark"
+            >이벤트
           </RouterLink>
         </PopoverGroup>
       </div>
@@ -92,7 +99,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import {
   Popover,
   PopoverButton,
@@ -100,23 +107,33 @@ import {
   PopoverPanel,
 } from "@headlessui/vue";
 import { Bars3Icon } from "@heroicons/vue/24/outline";
-import { groupList, navigation } from "@/assets/groupList";
-
-const active = process.env.STORE_ACTIVE_LINK;
+import { category } from "@/assets/groupList";
 
 const showChildGroup = ref(false);
 const parentGroupTitle = ref("");
 const childGroupList = ref([]);
 
+//category parent - child show
 const mouseEnter = (e) => {
   showChildGroup.value = true;
   parentGroupTitle.value = e.target.innerText;
-  childGroupList.value = groupList.find(
-    (o) => o.title === parentGroupTitle.value
+  childGroupList.value = category.find(
+    (o) => o.name === parentGroupTitle.value
   )?.childGroupList;
 };
 const mouseLeave = () => {
   showChildGroup.value = false;
 };
+//end
+
+//category sort
+const productCategory = computed(() =>
+  category.filter((c) => c.categoryId.startsWith("0"))
+);
+const pageCategory = computed(() =>
+  category.filter((c) => c.categoryId.startsWith("1"))
+);
+//end
+const promotionLink = process.env.STORE_PROMOTION;
 </script>
 <style></style>

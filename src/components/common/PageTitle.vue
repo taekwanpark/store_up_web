@@ -1,7 +1,7 @@
 <template>
   <div
     :class="
-      showSort
+      isCenter
         ? 'mt-24 mb-12 justify-center'
         : 'mt-24 mb-0 w-full justify-start'
     "
@@ -13,6 +13,6 @@
 
 <script setup>
 const props = defineProps({
-  showSort: { type: Boolean, default: true },
+  isCenter: { type: Boolean, default: true },
 });
 </script>

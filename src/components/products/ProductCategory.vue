@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="showCategory"
+    v-if="hasCategory"
     class="mb-10 w-full rounded-lg border border-store-border"
   >
     <ul
@@ -12,7 +12,7 @@
         전체보기
       </li>
       <li
-        v-for="i in groupList"
+        v-for="i in category"
         :key="i"
         class="flex cursor-pointer items-center justify-start rounded-lg px-5 pt-3 pb-2 hover:bg-store-gray-light hover:text-store-red-light"
       >
@@ -23,9 +23,9 @@
 </template>
 
 <script setup>
-import { groupList } from "@/assets/groupList";
+import { category } from "@/assets/groupList";
 
 const props = defineProps({
-  showCategory: { type: Boolean, default: false, required: true },
+  hasCategory: { type: Boolean, default: true },
 });
 </script>

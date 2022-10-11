@@ -1,13 +1,20 @@
 <template>
   <div>
-    <!--		page header-->
     <div class="flex flex-col items-center justify-center">
-      <PageTitle :show-sort="showSort">{{ title }}</PageTitle>
-      <ProductCategory :show-category="showCategory" />
+      <div
+        :class="
+          isMain
+            ? 'mt-24 mb-0 w-full justify-start'
+            : 'mt-24 mb-12 justify-center'
+        "
+        class="flex w-full items-center text-3xl font-semibold"
+      >
+        {{ title }}
+      </div>
+      <ProductCategory :has-category="hasCategory" />
     </div>
 
-    <!--		show sort : false-->
-    <div v-if="!showSort" class="flex h-10 w-full items-center justify-end">
+    <div v-if="isMain" class="flex h-10 w-full items-center justify-end">
       <div class="group flex cursor-pointer items-center justify-end">
         <div
           class="pt-1 text-lg text-store-gray-extraDark group-hover:text-store-gray-dark"
@@ -20,8 +27,7 @@
       </div>
     </div>
 
-    <!--		show sort : true-->
-    <div v-if="showSort" class="flex h-10 w-full items-center justify-between">
+    <div v-if="!isMain" class="flex h-10 w-full items-center justify-between">
       <div class="text-xs text-store-gray-extraDark">총 157건</div>
       <div class="cursor-pointer text-xs text-store-gray-extraDark">
         최신순 | 낮은가격순 | 높은 가격순
@@ -31,7 +37,7 @@
     <!--		products list : all-->
     <ul class="grid grid-cols-4 gap-x-6 gap-y-20" role="list">
       <li
-        v-for="product in products.slice(0, parseInt(listAmount))"
+        v-for="product in products.slice(0, parseInt(listLimit))"
         :key="product.name"
         class="col-span-1 flex flex-col overflow-hidden bg-white"
       >
@@ -112,16 +118,16 @@ import {
   HeartIcon as HeartIconLine,
   ShoppingCartIcon as ShoppingCartIconLine,
 } from "@heroicons/vue/24/outline";
-import PageTitle from "@/components/common/PageTitle";
-import ProductCategory from "@/components/products/ProductCategoryBox";
+import ProductCategory from "@/components/products/ProductCategory";
 
 const props = defineProps({
-  title: { type: String },
-  routeTo: { type: String },
-  listAmount: { type: String, default: "8" },
   products: { type: Array, required: true },
-  showSort: { type: Boolean, default: true },
-  showCategory: { type: Boolean, default: false },
   category: { type: Object },
+
+  title: { type: String },
+  listLimit: { type: String, default: "8" },
+
+  isMain: { type: Boolean, default: false },
+  hasCategory: { type: Boolean },
 });
 </script>

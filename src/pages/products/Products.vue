@@ -1,27 +1,25 @@
 <template>
-  <ProductCategoryLayout>
+  <ProductLayout>
     <MainProductList
       :category="currentGroup"
       :products="products"
-      :title="currentGroup.title"
       list-amount="999"
       show-category
-      show-sort
     />
-  </ProductCategoryLayout>
+  </ProductLayout>
 </template>
 
 <script setup>
-import ProductCategoryLayout from "@/components/products/ProductCategoryLayout";
+import ProductLayout from "@/components/products/ProductLayout";
 import MainProductList from "@/components/products/ProductsList";
 import { products } from "@/assets/productsList";
-import { groupList } from "@/assets/groupList";
+import { category } from "@/assets/groupList";
 import { computed } from "vue";
 
 const props = defineProps({
-  id: String,
+  categoryId: String,
 });
 const currentGroup = computed(() => {
-  return groupList.find((o) => o.id === props.id);
+  return category.find((o) => o.categoryId === props.categoryId);
 });
 </script>

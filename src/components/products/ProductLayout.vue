@@ -1,8 +1,8 @@
 <template>
   <div class="mb-32">
-    <ProductBanner />
+    <ProductBanner v-if="!hasCategory" />
     <InnerLgLayout>
-      <slot></slot>
+      <slot :hasCategory="hasCategory" />
     </InnerLgLayout>
   </div>
 </template>
@@ -10,4 +10,9 @@
 <script setup>
 import InnerLgLayout from "@/components/common/layouts/InnerLgLayout";
 import ProductBanner from "@/components/products/ProductBanner";
+
+const props = defineProps({
+  hasCategory: { type: Boolean },
+  isMain: { type: Boolean, default: false },
+});
 </script>

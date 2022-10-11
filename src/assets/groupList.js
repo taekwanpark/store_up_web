@@ -6,34 +6,31 @@ import {
   Squares2X2Icon,
 } from "@heroicons/vue/24/outline";
 
-export const navigation = [
+export const category = [
   {
-    page: "베스트",
-    to: process.env.STORE_PRODUCTS_BEST,
+    categoryId: "101",
+    name: "베스트",
+    to: process.env.STORE_PRODUCTS,
   },
   {
-    page: "신상품",
-    to: process.env.STORE_PRODUCTS_NEWEST,
+    categoryId: "102",
+    name: "신상품",
+    to: process.env.STORE_PRODUCTS,
   },
   {
-    page: "떨이할인",
-    to: process.env.STORE_PRODUCTS_DISCOUNT,
+    categoryId: "103",
+    name: "떨이할인",
+    to: process.env.STORE_PRODUCTS,
   },
   {
-    page: "정기구독",
-    to: process.env.STORE_PRODUCTS_SUBSCRIPTION,
+    categoryId: "104",
+    name: "정기구독",
+    to: process.env.STORE_PRODUCTS,
   },
   {
-    page: "이벤트",
-    to: process.env.STORE_PROMOTION,
-  },
-];
-
-export const groupList = [
-  {
-    id: "001",
-    title: "농산물",
-    to: process.env.STORE_PRODUCTS_CATEGORY,
+    categoryId: "001",
+    name: "농산물",
+    to: process.env.STORE_PRODUCTS,
     icon: ChartBarIcon,
     childGroupList: [
       { name: "백미/현미" },
@@ -46,9 +43,9 @@ export const groupList = [
     ],
   },
   {
-    id: "002",
-    title: "수산물",
-    to: process.env.STORE_PRODUCTS_CATEGORY,
+    categoryId: "002",
+    name: "수산물",
+    to: process.env.STORE_PRODUCTS,
     icon: CursorArrowRaysIcon,
     childGroupList: [
       { name: "생선류" },
@@ -57,9 +54,9 @@ export const groupList = [
     ],
   },
   {
-    id: "003",
-    title: "축산물",
-    to: process.env.STORE_PRODUCTS_CATEGORY,
+    categoryId: "003",
+    name: "축산물",
+    to: process.env.STORE_PRODUCTS,
     icon: ShieldCheckIcon,
     childGroupList: [
       { name: "소고기(한우)" },
@@ -69,9 +66,9 @@ export const groupList = [
     ],
   },
   {
-    id: "004",
-    title: "임산물",
-    to: process.env.STORE_PRODUCTS_CATEGORY,
+    categoryId: "004",
+    name: "임산물",
+    to: process.env.STORE_PRODUCTS,
     icon: Squares2X2Icon,
     childGroupList: [
       { name: "백미/현미" },
@@ -84,9 +81,9 @@ export const groupList = [
     ],
   },
   {
-    id: "005",
-    title: "가공식품",
-    to: process.env.STORE_PRODUCTS_CATEGORY,
+    categoryId: "005",
+    name: "가공식품",
+    to: process.env.STORE_PRODUCTS,
     icon: ArrowPathIcon,
     childGroupList: [
       { name: "백미/현미" },
@@ -99,9 +96,9 @@ export const groupList = [
     ],
   },
   {
-    id: "006",
-    title: "공산품",
-    to: process.env.STORE_PRODUCTS_CATEGORY,
+    categoryId: "006",
+    name: "공산품",
+    to: process.env.STORE_PRODUCTS,
     icon: ArrowPathIcon,
     childGroupList: [
       { name: "백미/현미" },
