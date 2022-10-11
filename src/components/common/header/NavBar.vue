@@ -40,10 +40,15 @@
                   <ul
                     class="relative z-20 flex w-40 flex-col justify-start gap-1 rounded-l-lg bg-white p-4"
                   >
-                    <li
-                      v-for="item in productCategory"
+                    <RouterLink
+                      v-for="item in groups"
                       :key="item.name"
+                      :to="{
+                        name: productLink,
+                        query: { category_id: item.id },
+                      }"
                       class="flex h-10 w-32 cursor-pointer items-center rounded-lg px-2 py-2 text-black hover:bg-gray-50 hover:text-red-500"
+                      tag="li"
                       @mouseenter="mouseEnter"
                     >
                       <component
@@ -51,22 +56,16 @@
                         aria-hidden="true"
                         class="h-5 w-5 flex-shrink-0"
                       />
-                      <div class="ml-4">
-                        <RouterLink
-                          :to="{
-                            name: item.to,
-                            query: { categoryId: item.categoryId },
-                          }"
-                          class="whitespace-nowrap text-base font-normal leading-none"
-                        >
-                          {{ item.name }}
-                        </RouterLink>
+                      <div
+                        class="whitespace-nowrap text-base font-normal leading-none"
+                      >
+                        {{ item.description }}
                       </div>
-                    </li>
+                    </RouterLink>
                   </ul>
                   <!--child category-->
                   <ul
-                    class="relative z-20 flex w-40 flex-col justify-start gap-1 rounded-l-lg bg-white p-4"
+                    class="relative z-20 flex w-40 flex-col justify-start gap-1 rounded-r-lg bg-white p-4"
                   >
                     <li
                       v-for="childItem in childGroupList"
@@ -99,7 +98,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import {
   Popover,
   PopoverButton,
@@ -107,19 +106,17 @@ import {
   PopoverPanel,
 } from "@headlessui/vue";
 import { Bars3Icon } from "@heroicons/vue/24/outline";
+import { getData } from "@/libs/useAxios";
 import { category } from "@/assets/groupList";
 
 const showChildGroup = ref(false);
-const parentGroupTitle = ref("");
 const childGroupList = ref([]);
 
 //category parent - child show
 const mouseEnter = (e) => {
   showChildGroup.value = true;
-  parentGroupTitle.value = e.target.innerText;
-  childGroupList.value = category.find(
-    (o) => o.name === parentGroupTitle.value
-  )?.childGroupList;
+  const currentGroup = groups.value.find((o) => o.name === e.target.innerText);
+  childGroupList.value = currentGroup.children_groups;
 };
 const mouseLeave = () => {
   showChildGroup.value = false;
@@ -127,13 +124,21 @@ const mouseLeave = () => {
 //end
 
 //category sort
-const productCategory = computed(() =>
-  category.filter((c) => c.categoryId.startsWith("0"))
-);
+// const productCategory = computed(() =>
+//   category.filter((c) => c.categoryId.startsWith("0"))
+// );
 const pageCategory = computed(() =>
   category.filter((c) => c.categoryId.startsWith("1"))
 );
 //end
+//promotion link
+const productLink = process.env.STORE_PRODUCTS;
 const promotionLink = process.env.STORE_PROMOTION;
+
+//axios data
+const groups = ref();
+onMounted(async () => {
+  groups.value = await getData("/api/groups");
+});
 </script>
 <style></style>

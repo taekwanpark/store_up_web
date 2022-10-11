@@ -1,15 +1,5 @@
 # store_up_web
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
 ## Project Setup
 
 ```sh
@@ -29,15 +19,16 @@ npm run build
 ```
 
 ---
-## npm install
-### vue-router
-> yarn add vue-router@4
 
-### pinia
-> yarn add pinia
+## Features
 
-### tailwindcss
-> npm install -D tailwindcss postcss autoprefixer
+- ### VUE3
 
-> npx tailwindcss init -p
+with Vue 3 in Vite.
+
+- ### Packages
+    - vue-router
+    - tailwindcss
+    - pinia
+
 
