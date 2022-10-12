@@ -41,7 +41,7 @@
                     class="relative z-20 flex w-40 flex-col justify-start gap-1 rounded-l-lg bg-white p-4"
                   >
                     <RouterLink
-                      v-for="item in groups"
+                      v-for="item in data"
                       :key="item.name"
                       :to="{
                         name: productLink,
@@ -98,7 +98,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref } from "vue";
+import { computed, getCurrentInstance, ref } from "vue";
 import {
   Popover,
   PopoverButton,
@@ -106,7 +106,6 @@ import {
   PopoverPanel,
 } from "@headlessui/vue";
 import { Bars3Icon } from "@heroicons/vue/24/outline";
-import { getData } from "@/libs/useAxios";
 import { category } from "@/assets/groupList";
 
 const showChildGroup = ref(false);
@@ -115,7 +114,7 @@ const childGroupList = ref([]);
 //category parent - child show
 const mouseEnter = (e) => {
   showChildGroup.value = true;
-  const currentGroup = groups.value.find((o) => o.name === e.target.innerText);
+  const currentGroup = data.value.find((o) => o.name === e.target.innerText);
   childGroupList.value = currentGroup.children_groups;
 };
 const mouseLeave = () => {
@@ -136,9 +135,8 @@ const productLink = process.env.STORE_PRODUCTS;
 const promotionLink = process.env.STORE_PROMOTION;
 
 //axios data
-const groups = ref();
-onMounted(async () => {
-  groups.value = await getData("/api/groups");
-});
+const { proxy } = getCurrentInstance();
+const { data, error, isLoading } = proxy.getData("/groups");
+console.log(data);
 </script>
 <style></style>

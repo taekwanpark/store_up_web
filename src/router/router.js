@@ -4,7 +4,7 @@ import Login from "@/pages/member/Login";
 import SignUp from "@/pages/member/SignUp";
 import FindId from "@/pages/member/find/FindId";
 import FindPassword from "@/pages/member/find/FindPassword";
-import Products from "@/pages/products/Products";
+import Products from "@/pages/Products";
 import Promotion from "@/pages/Promotion";
 
 const routes = [

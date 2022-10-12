@@ -15,8 +15,8 @@ import ProductLayout from "@/components/products/ProductLayout";
 import MainProductList from "@/components/products/ProductsList";
 import { products } from "@/assets/productsList";
 import { category } from "@/assets/groupList";
-import { computed, onMounted, ref } from "vue";
-import { getData } from "@/libs/useAxios";
+import { computed, getCurrentInstance } from "vue";
+import { useRoute } from "vue-router";
 
 const props = defineProps({
   categoryId: String,
@@ -24,13 +24,11 @@ const props = defineProps({
 const currentGroup = computed(() => {
   return category.find((o) => o.categoryId === props.categoryId);
 });
-const data = ref([]);
-const query = ref("");
-query.value = `?count=20&filter[brand_id]=1&filter[purchasable]=1&filter[group_id]=1&sort=id&page=1`;
-onMounted(async () => {
-  data.value = await getData(
-    `/api/product?count=20&filter[brand_id]=1&filter[purchasable]=1&filter[group_id]=1&sort=id&page=1`
-  );
-});
-console.log(data.value);
+const route = useRoute();
+const query = route.query;
+const { proxy } = getCurrentInstance();
+const { data } = proxy.getData(
+  "https://storeup.amuz/api/product?count=20&filter[brand_id]=1&filter[group_id]=1"
+);
+console.log(data);
 </script>
