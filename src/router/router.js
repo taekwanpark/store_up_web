@@ -6,6 +6,7 @@ import FindId from "@/pages/member/find/FindId";
 import FindPassword from "@/pages/member/find/FindPassword";
 import Products from "@/pages/Products";
 import Promotion from "@/pages/Promotion";
+import Payment from "@/pages/payment/Payment";
 
 const routes = [
   {
@@ -56,6 +57,11 @@ const routes = [
     path: `/${process.env.STORE_PROMOTION}`,
     name: process.env.STORE_PROMOTION,
     component: Promotion,
+  },
+  {
+    path: `/${process.env.STORE_PAYMENT}`,
+    name: process.env.STORE_PAYMENT,
+    component: Payment,
   },
 ];
 const router = createRouter({

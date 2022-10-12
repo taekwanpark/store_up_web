@@ -13,6 +13,7 @@ module.exports = {
             light: `#f3f4f6`,
             normal: `#e5e7eb`,
             dark: `#9ca3af`,
+            darker: `#6b7280`,
             extraDark: `#4b5563`,
           },
           red: {
