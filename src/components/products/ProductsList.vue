@@ -49,7 +49,7 @@
           />
 
           <div
-            class="absolute bottom-0 h-full w-full cursor-pointer opacity-0 transition-all duration-300 ease-in-out group-hover:bg-black group-hover:opacity-30"
+            class="absolute bottom-0 h-full w-full cursor-pointer opacity-0 transition-all duration-300 ease-in-out group-hover:bg-white group-hover:opacity-30"
           ></div>
 
           <div

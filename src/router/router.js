@@ -6,7 +6,7 @@ import FindId from "@/pages/member/find/FindId";
 import FindPassword from "@/pages/member/find/FindPassword";
 import Products from "@/pages/Products";
 import Promotion from "@/pages/Promotion";
-import Payment from "@/pages/payment/Payment";
+import Payment from "@/pages/Payment";
 
 const routes = [
   {
