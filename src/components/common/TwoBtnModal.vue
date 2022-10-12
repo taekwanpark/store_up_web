@@ -40,13 +40,18 @@
               <Divider />
               <div class="my-16 flex w-full justify-center">
                 <p class="text-xl text-store-gray-extraDark">
-                  {{ props.text }}
+                  {{ text }}
                 </p>
               </div>
-              <div class="">
-                <StoreBtn btn-size="sm" is-black @click="closeModal"
-                  >확인
-                </StoreBtn>
+              <div class="flex justify-center gap-x-2">
+                <div>
+                  <StoreLinkBtn btn-size="md">{{ leftBtnText }}</StoreLinkBtn>
+                </div>
+                <div>
+                  <StoreBtn btn-size="md" is-black @click="closeModal"
+                    >{{ rightBtnText }}
+                  </StoreBtn>
+                </div>
               </div>
             </DialogPanel>
           </TransitionChild>
@@ -67,6 +72,7 @@ import {
 import { defineEmits, defineProps } from "vue";
 import Divider from "@/components/common/Divider";
 import StoreBtn from "@/components/common/StoreBtn";
+import StoreLinkBtn from "@/components/common/StoreLinkBtn";
 
 const props = defineProps({
   isOpen: { type: Boolean, required: true },
@@ -74,6 +80,8 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  leftBtnText: { type: String },
+  rightBtnText: { type: String },
 });
 const emits = defineEmits(["closeModal"]);
 const closeModal = () => {

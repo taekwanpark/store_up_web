@@ -58,9 +58,15 @@
             <div class="flex justify-center">
               <div
                 class="flex h-8 w-8 items-center justify-center rounded-full bg-white pt-px"
+                @click="onHeartClick"
               >
                 <HeartIconLine
-                  class="h-5 w-5 fill-white text-black hover:h-6 hover:w-6 hover:fill-red-500 hover:text-white"
+                  :class="
+                    isClicked
+                      ? 'fill-red-500 text-transparent'
+                      : 'fill-white text-black hover:h-6 hover:w-6 hover:fill-red-500 hover:text-white'
+                  "
+                  class="h-5 w-5"
                 />
               </div>
             </div>
@@ -110,6 +116,14 @@
       </li>
     </ul>
   </div>
+  <TwoBtnModal
+    :is-open="isOpen"
+    :left-btn-text="modal.lBtnTxt"
+    :right-btn-text="modal.rBtnTxt"
+    :text="modal.txt"
+    @closeModal="closeModal"
+  ></TwoBtnModal>
+  {{ modal.lBtnTxt }}asdf
 </template>
 
 <script setup>
@@ -119,6 +133,12 @@ import {
   ShoppingCartIcon as ShoppingCartIconLine,
 } from "@heroicons/vue/24/outline";
 import ProductCategory from "@/components/products/ProductCategory";
+import TwoBtnModal from "@/components/common/TwoBtnModal";
+import { closeModal, isOpen, openModal } from "@/libs/useCloseModal";
+import { ref, watch } from "vue";
+
+const isClicked = ref(false);
+const modal = ref({ txt: "", rBtnTxt: "", lBtnTxt: "" });
 
 const props = defineProps({
   products: { type: Array, required: true },
@@ -129,5 +149,19 @@ const props = defineProps({
 
   isMain: { type: Boolean, default: false },
   hasCategory: { type: Boolean },
+});
+
+const onHeartClick = () => {
+  isClicked.value = !isClicked.value;
+  if (!isClicked.value) {
+    modal.value.txt = "찜목록에서 제외되었습니다.";
+  } else {
+    modal.value.txt = "찜목록에 추가하였습니다.";
+  }
+  modal.value.lBtnTxt = "찜목록 확인";
+  modal.value.rBtnTxt = "계속 쇼핑하기";
+};
+watch(modal.value, () => {
+  openModal();
 });
 </script>

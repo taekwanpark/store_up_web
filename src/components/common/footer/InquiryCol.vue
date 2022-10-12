@@ -12,17 +12,17 @@
     <!--			find button-->
     <ul class="mt-5 flex justify-between space-x-2">
       <li
-        class="flex h-10 w-28 cursor-pointer items-center justify-center bg-white"
+        class="flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg border border-store-border bg-white pt-1 text-sm"
       >
         <span class="">카카오톡 문의</span>
       </li>
       <li
-        class="flex h-10 w-28 cursor-pointer items-center justify-center bg-white"
+        class="flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg border border-store-border bg-white pt-1 text-sm"
       >
         <span class="">대량주문문의</span>
       </li>
       <li
-        class="flex h-10 w-28 cursor-pointer items-center justify-center bg-white"
+        class="flex h-10 w-28 cursor-pointer items-center justify-center rounded-lg border border-store-border bg-white pt-1 text-sm"
       >
         <span class="">입점문의</span>
       </li>

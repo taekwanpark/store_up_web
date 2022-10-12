@@ -6,12 +6,12 @@ import { defaultConfig, plugin } from "@formkit/vue";
 import "./styles.css";
 import { generateClasses } from "@formkit/themes";
 import formkitTheme from "@/libs/formkitTheme";
-import { usGetFetch } from "@/libs/useFetch";
+import { useQuery } from "@/libs/axios";
 
 const app = createApp(App);
 const pinia = createPinia();
 
-app.config.globalProperties.getData = usGetFetch;
+app.provide("useQuery", useQuery);
 app
   .use(router)
   .use(pinia)

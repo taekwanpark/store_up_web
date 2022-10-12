@@ -2,7 +2,6 @@ import { fileURLToPath, URL } from "node:url";
 import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import dns from "dns";
-import mkcert from "vite-plugin-mkcert";
 
 dns.setDefaultResultOrder("verbatim");
 // https://vitejs.dev/config/
@@ -14,15 +13,15 @@ export default ({ mode }) => {
     //   https: true,
     //   host: "storeup.amuz",
     // },
-    devServer: {
-      proxy: {
-        "/api": {
-          target: "https://localhost:5173",
-          changeOrigin: true,
-        },
-      },
-    },
-    plugins: [vue(), mkcert()],
+    // dsvServer: {
+    //   proxy: {
+    //     "/api": {
+    //       target: "https://storeup.amuz/",
+    //       changeOrigin: true,
+    //     },
+    //   },
+    // },
+    plugins: [vue()],
 
     define: {
       "process.env": loadEnv(mode, process.cwd(), "STORE"),

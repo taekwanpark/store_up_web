@@ -59,7 +59,7 @@
                       <div
                         class="whitespace-nowrap text-base font-normal leading-none"
                       >
-                        {{ item.description }}
+                        {{ item.name }}
                       </div>
                     </RouterLink>
                   </ul>
@@ -98,7 +98,7 @@
 </template>
 
 <script setup>
-import { computed, getCurrentInstance, ref } from "vue";
+import { computed, ref } from "vue";
 import {
   Popover,
   PopoverButton,
@@ -107,11 +107,17 @@ import {
 } from "@headlessui/vue";
 import { Bars3Icon } from "@heroicons/vue/24/outline";
 import { category } from "@/assets/groupList";
+import { useQuery } from "@/libs/axios";
+
+const { data, error, isLoading } = useQuery("/api/groups");
+
+//promotion link
+const productLink = process.env.STORE_PRODUCTS;
+const promotionLink = process.env.STORE_PROMOTION;
 
 const showChildGroup = ref(false);
 const childGroupList = ref([]);
 
-//category parent - child show
 const mouseEnter = (e) => {
   showChildGroup.value = true;
   const currentGroup = data.value.find((o) => o.name === e.target.innerText);
@@ -120,23 +126,9 @@ const mouseEnter = (e) => {
 const mouseLeave = () => {
   showChildGroup.value = false;
 };
-//end
 
-//category sort
-// const productCategory = computed(() =>
-//   category.filter((c) => c.categoryId.startsWith("0"))
-// );
 const pageCategory = computed(() =>
   category.filter((c) => c.categoryId.startsWith("1"))
 );
-//end
-//promotion link
-const productLink = process.env.STORE_PRODUCTS;
-const promotionLink = process.env.STORE_PROMOTION;
-
-//axios data
-const { proxy } = getCurrentInstance();
-const { data, error, isLoading } = proxy.getData("/groups");
-console.log(data);
 </script>
 <style></style>

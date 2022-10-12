@@ -1,11 +1,11 @@
 <template>
-  <div class="= flex h-96 w-full flex-col items-center">
+  <div class="= flex h-96 w-full flex-col items-center border-b">
     <Divider />
     <InnerLgLayout>
       <PolicyRow />
     </InnerLgLayout>
     <Divider />
-    <div class="bg-amuzGray-f5f5f5 flex h-full w-full justify-center">
+    <div class="flex w-full justify-center bg-store-gray-extraLight">
       <InnerLgLayout>
         <CompanyRow />
       </InnerLgLayout>

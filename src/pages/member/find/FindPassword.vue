@@ -23,7 +23,6 @@ import PasswordFind from "@/components/member/find/password/FindPasswordComponen
 import ResetPassword from "@/components/member/find/password/ResetPasswordComponent";
 
 const router = useRouter();
-const isOpen = ref(false);
 const currentTab = ref("find");
 const showCertification = ref(false);
 const modalText = ref("");
@@ -41,6 +40,8 @@ const certificate = () => {
 const findPw = () => {
   currentTab.value = "found";
 };
+
+const isOpen = ref(false);
 const closeModal = () => {
   isOpen.value = false;
   showCertification.value = true;
