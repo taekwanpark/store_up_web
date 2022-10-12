@@ -1,18 +1,17 @@
 <template>
   <ProductLayout>
-    <MainProductList
+    <ProductsList
       :category="currentGroup"
       :products="products"
-      list-amount="999"
-      show-category
-      title="adf"
+      has-category
+      list-limit="999"
     />
   </ProductLayout>
 </template>
 
 <script setup>
 import ProductLayout from "@/components/products/ProductLayout";
-import MainProductList from "@/components/products/ProductsList";
+import ProductsList from "@/components/products/ProductsList";
 import { products } from "@/assets/productsList";
 import { category } from "@/assets/groupList";
 import { computed, getCurrentInstance } from "vue";
@@ -30,5 +29,4 @@ const { proxy } = getCurrentInstance();
 const { data } = proxy.getData(
   "https://storeup.amuz/api/product?count=20&filter[brand_id]=1&filter[group_id]=1"
 );
-console.log(data);
 </script>

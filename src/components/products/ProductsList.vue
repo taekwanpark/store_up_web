@@ -110,6 +110,7 @@
       </li>
     </ul>
   </div>
+  <Modal is-open text="찜목록에 추가하였습니다."></Modal>
 </template>
 
 <script setup>
@@ -119,6 +120,7 @@ import {
   ShoppingCartIcon as ShoppingCartIconLine,
 } from "@heroicons/vue/24/outline";
 import ProductCategory from "@/components/products/ProductCategory";
+import Modal from "@/components/common/Modal";
 
 const props = defineProps({
   products: { type: Array, required: true },

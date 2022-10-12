@@ -39,7 +39,7 @@
               </DialogTitle>
               <Divider />
               <div class="my-16 flex w-full justify-center">
-                <p class="text-2xl text-store-gray-extraDark">
+                <p class="text-xl text-store-gray-extraDark">
                   {{ props.text }}
                 </p>
               </div>
