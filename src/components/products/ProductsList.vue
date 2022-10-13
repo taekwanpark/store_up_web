@@ -41,13 +41,15 @@
         :key="product.name"
         class="col-span-1 flex flex-col overflow-hidden bg-white"
       >
-        <div class="group relative overflow-hidden rounded-lg shadow-lg">
+        <div
+          id="product-img"
+          class="group relative overflow-hidden rounded-lg shadow-lg"
+        >
           <img
             :alt="product.name"
             :src="product.imageUrl"
             class="mx-auto h-80 w-full cursor-pointer rounded-lg object-cover"
           />
-
           <div
             class="absolute bottom-0 h-full w-full cursor-pointer opacity-0 transition-all duration-300 ease-in-out group-hover:bg-white group-hover:opacity-30"
           ></div>
@@ -61,22 +63,19 @@
                 @click="onHeartClick"
               >
                 <HeartIconLine
-                  :class="
-                    isClicked
-                      ? 'fill-red-500 text-transparent'
-                      : 'fill-white text-black hover:h-6 hover:w-6 hover:fill-red-500 hover:text-white'
-                  "
+                  v-if="!isClicked"
                   class="h-5 w-5"
+                  @mouseenter="onMouseOver"
                 />
+                <HeartIconSolid v-if="isClicked" class="h-5 w-5 fill-red-500" />
               </div>
             </div>
             <div class="flex justify-center">
               <div
                 class="flex h-8 w-8 items-center justify-center rounded-full bg-white pt-px"
               >
-                <ShoppingCartIconLine
-                  class="h-5 w-5 fill-white text-black hover:h-6 hover:w-6 hover:fill-black"
-                />
+                <ShoppingCartIconLine class="h-5 w-5" />
+                <ShoppingCartIconSolid class="h-5 w-5" />
               </div>
             </div>
           </div>
@@ -123,7 +122,6 @@
     :text="modal.txt"
     @closeModal="closeModal"
   ></TwoBtnModal>
-  {{ modal.lBtnTxt }}asdf
 </template>
 
 <script setup>
@@ -132,12 +130,19 @@ import {
   HeartIcon as HeartIconLine,
   ShoppingCartIcon as ShoppingCartIconLine,
 } from "@heroicons/vue/24/outline";
+
+import {
+  HeartIcon as HeartIconSolid,
+  ShoppingCartIcon as ShoppingCartIconSolid,
+} from "@heroicons/vue/24/solid";
 import ProductCategory from "@/components/products/ProductCategory";
 import TwoBtnModal from "@/components/common/TwoBtnModal";
 import { closeModal, isOpen, openModal } from "@/libs/useCloseModal";
 import { ref, watch } from "vue";
 
 const isClicked = ref(false);
+const mouseOver = ref(false);
+const onMouseOver = () => {};
 const modal = ref({ txt: "", rBtnTxt: "", lBtnTxt: "" });
 
 const props = defineProps({
@@ -165,3 +170,9 @@ watch(modal.value, () => {
   openModal();
 });
 </script>
+<style scoped>
+#product-img:hover img {
+  @apply scale-105;
+  @apply transition-all duration-500;
+}
+</style>

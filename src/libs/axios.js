@@ -1,4 +1,4 @@
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import axios from "axios";
 
 const API_URL = `https://storeup.amuz`;
@@ -13,10 +13,14 @@ const useQuery = (url) => {
   const data = ref(null);
   const isLoading = ref(true);
   const error = ref(null);
-  instance(url)
-    .then((res) => (data.value = res.data))
-    .then(() => (isLoading.value = false))
-    .catch((err) => (error.value = err));
+  const doFetch = () => {
+    instance(url)
+      .then((res) => (data.value = res.data))
+      .then(() => (isLoading.value = false))
+      .catch((err) => (error.value = err));
+  };
+  onMounted(doFetch);
+
   return { data, error, isLoading };
 };
 
